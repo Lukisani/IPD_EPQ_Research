@@ -1,5 +1,7 @@
 class Player:
 
+    '''General template for each strategy'''
+
     name = 'Player'
 
     classifier = {
@@ -15,7 +17,14 @@ class Player:
     
 
     def strategy(self, player_move, opponent_move):
-        '''Define behaviour for a move. Override in subclasses'''
+        '''
+        Defines behaviour for a move. Override in subclasses
+        
+        Function returns one of two values for each move:
+        "C" to cooperate,
+        "D" to defect.
+        
+        '''
         pass
 
 
@@ -62,3 +71,45 @@ class AlwaysCooperate(Player):
         self.history.append(player_move)
         self.opponent_history.append(opponent_move)
 
+        return 'C'
+
+
+class AlwaysDefect(Player):
+
+    name = 'Always_defect'
+
+    classifier = {
+        'niceness' : 0,
+        'forgiveness' : 0,
+        'memory_depth' : 0
+    }
+
+    def strategy(self, player_move, opponent_move):
+        
+        self.history.append(player_move)
+        self.opponent_history.append(opponent_move)
+
+        return 'D'
+
+
+class Titfortwotats(Player):
+    
+    name = 'Tit_for_two_tats'
+
+    classifier = {
+        'niceness' : 1,
+        'forgiveness' : 1,
+        'memory_depth' : 2
+    }
+
+    def strategy(self, player_move, opponent_move):
+        
+        self.history.append(player_move)
+        self.opponent_history.append(opponent_move)
+
+        count_opponent_defections = 0
+        for move in self.opponent_history[-2:-1]:
+            if move == 'D':
+                count_opponent_defections += 1
+
+        if not self.opponent_history or count_opponent_defections < 2:
