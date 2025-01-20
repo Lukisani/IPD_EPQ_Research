@@ -1,7 +1,6 @@
 from strategies import*
 from tournament import*
 
-results = duel(TitForTat(), AlwaysDefect(), rounds=20)
-results = pd.DataFrame(results)
-results = results.T
+scores, results = duel(Random(), TitForTwoTats(), rounds=20)
+print(scores)
 print(results)

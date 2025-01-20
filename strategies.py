@@ -97,7 +97,7 @@ class TitForTwoTats(Player):
     
     classifier = {
         'niceness' : 1,
-        'forgiveness' : 1,
+        'forgiveness' : .5,
         'memory_depth' : 2
     }
 
@@ -105,7 +105,7 @@ class TitForTwoTats(Player):
 
         '''Counts how many defections in last 2 moves'''
         count_opponent_defections = 0
-        for move in opponent_history[-2:-1]:
+        for move in opponent_history[-2:]:
             if move == 'D':
                 count_opponent_defections += 1
 
@@ -129,3 +129,43 @@ class Random(Player):
     def strategy(self, opponent_history):
         
         return random.choice(['C', 'D'])
+
+class Alternator(Player):
+
+    name = 'Alternator'
+
+    '''Alternates between cooperating and defecting'''
+
+    classifier = {
+        'niceness' : None,
+        'forgiveness' : None,
+        'memory_depth' : 0
+    }
+
+    def strategy(self, opponent_history):
+        
+        if len(opponent_history) % 2 == 0:
+            return 'C'
+        else:
+            return 'D'
+
+
+class NotNiceTitForTat(Player):
+
+    name = 'Not_nice_tit_for_tat'
+
+    '''TitForTat but defects on first move'''
+
+    classifer = {
+        'niceness' : 0,
+        'forgiveness' : .5,
+        'memory_depth' : 1
+    }
+
+    def strategy(self, opponent_history):
+        
+        if not opponent_history:
+            return 'D'
+        
+        else:
+            return opponent_history[-1]

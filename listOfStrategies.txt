@@ -1,0 +1,7 @@
+TitForTat
+AlwaysCooperate
+AlwaysDefect
+TitForTwoTat
+Random
+Alternator
+NotNiceTitForTat

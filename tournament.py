@@ -54,6 +54,9 @@ def run_basic_tournament(players, rounds=100, average=3):
                 # Automatically chooses first player if both the same
                 scores[player2.name] += player2.score
     
+    results = pd.DataFrame(results.items(), columns=['Match', 'Score'])
+    scores = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
+
     return results, scores
 
 def duel(player1, player2, rounds=100, average=3):
@@ -62,10 +65,16 @@ def duel(player1, player2, rounds=100, average=3):
 
     play_match(player1, player2, rounds)
 
+    scores = {
+        player1.name : player1.score,
+        player2.name : player2.score
+    }
+
     results = {
-        'Round' : list(range(rounds)),
+        'Round' : list(range(1, rounds+1)),
         player1.name : player1.history,
         player2.name : player2.history
         }
     
-    return results
+    results = pd.DataFrame(results).T
+    return scores, results

@@ -2,8 +2,8 @@
 
 Niceness:
     1: Never defects first
-    0.5: Conditionally defects first
-    0: Unconditionally defects first
+    0.5: Conditionally defects first / First to defect even if unprovoked (but not on first move)
+    0: Unconditionally defects first / Defects on first move
 
 Forgiveness:
     1: Forgives after 1 defection
@@ -13,3 +13,4 @@ Forgiveness:
 Memory depth:
     n: n indicates the number of prior moves the strategy considers before deciding on a move
 
+Generous??

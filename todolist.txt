@@ -1,1 +1,4 @@
 calculate average of tournament
+finish adding strategies (roughly 30)
+change classifier for all strats
+include more attributes
