@@ -1,3 +1,5 @@
+import random
+
 class Player:
 
     '''General template for each strategy'''
@@ -111,3 +113,19 @@ class TitForTwoTats(Player):
             return 'C'
         else:
             return 'D'
+
+class Random(Player):
+
+    name = 'Random'
+
+    '''Cooperates or defects randomly'''
+
+    classifier = {
+        'niceness' : None,
+        'forgiveness' : None,
+        'memory_depth' : 0
+    }
+
+    def strategy(self, opponent_history):
+        
+        return random.choice(['C', 'D'])

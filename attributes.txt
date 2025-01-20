@@ -1,0 +1,15 @@
+# If attribute cannot be used to describe strategy accurately, it will be assign a None value in the classifier
+
+Niceness:
+    1: Never defects first
+    0.5: Conditionally defects first
+    0: Unconditionally defects first
+
+Forgiveness:
+    1: Forgives after 1 defection
+    0.5: Forgives conditionally after several defections
+    0: Never Forgives
+
+Memory depth:
+    n: n indicates the number of prior moves the strategy considers before deciding on a move
+
