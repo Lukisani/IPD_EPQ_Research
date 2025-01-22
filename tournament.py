@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def play_match(player1, player2, rounds):
-    '''PLay a match between two players'''
+    '''Plays a match between two players'''
 
     player1.reset()
     player2.reset()
@@ -30,6 +30,7 @@ def play_match(player1, player2, rounds):
             player2.score += 1
 
 def run_basic_tournament(players, rounds=100, average=3):
+    '''Runs basic tournament with round-robin format between every strategy included, not including noise'''
     scores = {player.name: 0 for player in players} # Dictionary to store the results of the tournament
     results = {}
     matchups_played = set() # Set to keep track of which matchups have already occurred
@@ -57,11 +58,13 @@ def run_basic_tournament(players, rounds=100, average=3):
     results = pd.DataFrame(results.items(), columns=['Match', 'Score'])
     scores = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
 
+    scores = scores.sort_values(by='Score', ascending=False).reset_index(drop=True)
+
     return results, scores
 
 def duel(player1, player2, rounds=100, average=3):
 
-    '''To view a full one-on-one match between two strategies'''
+    '''To view a full one-on-one match between two strategies for analysis'''
 
     play_match(player1, player2, rounds)
 

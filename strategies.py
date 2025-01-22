@@ -130,6 +130,7 @@ class Random(Player):
         
         return random.choice(['C', 'D'])
 
+
 class Alternator(Player):
 
     name = 'Alternator'
@@ -169,3 +170,171 @@ class NotNiceTitForTat(Player):
         
         else:
             return opponent_history[-1]
+
+
+class Friedman(Player):
+
+    name = 'Grim_Trigger'
+
+    '''Cooperates until the opponent defects; once defected against, it defects forever.'''
+
+    classifier = {
+        'niceness': 1,
+        'forgiveness': 0,
+        'memory_depth': float('inf')
+    }
+
+    def strategy(self, opponent_history):
+
+        return 'D' if 'D' in opponent_history else 'C'
+
+
+class Pavlov(Player):
+
+    name = 'Pavlov'
+
+    '''Cooperates if the previous round resulted in a payoff of 3 (mutual cooperation) or 5 (exploiting the opponent), otherwise defects.'''
+
+    classifier = {
+        'niceness': 0.75,
+        'forgiveness': 0.75,
+        'memory_depth': 1
+    }
+
+    def strategy(self, opponent_history):
+
+        if not opponent_history:
+            return 'C'
+        return 'C' if opponent_history[-1] == self.history[-1] else 'D'
+
+
+class Prober(Player):
+
+    name = 'Prober'
+
+    '''Defects initially to test the opponent, then behaves like Tit for Tat or Always Defect based on the opponent's response.'''
+
+    classifier = {
+        'niceness': 0.5,
+        'forgiveness': 0.5,
+        'memory_depth': float('inf')
+    }
+
+    def strategy(self, opponent_history):
+        if len(opponent_history) < 3:
+            return 'D' if len(opponent_history) in [0, 2] else 'C'
+        return 'D' if opponent_history[1:3] == ['D', 'D'] else TitForTat().strategy(opponent_history)
+
+
+class Tester(Player):
+
+    name = 'Tester'
+
+    '''Starts with "DCC", then cooperates if the opponent defects in response to defection; otherwise, defects forever.'''
+    
+    def strategy(self, opponent_history):
+
+        if len(opponent_history) < 3:
+            return 'D' if len(opponent_history) == 0 else 'C'
+        return 'C' if opponent_history[1] == 'D' else 'D'
+
+
+class Joss(Player):
+
+    name = 'Joss'
+
+    '''A variant of Tit For Tat that randomly defects with a small probability (e.g., 10%).'''
+
+    def strategy(self, opponent_history):
+
+        if not opponent_history:
+            return 'C'
+        return 'D' if random.random() < 0.1 else opponent_history[-1]
+
+
+class SoftMajority(Player):
+
+    name = 'Soft_Majority'
+
+    '''Cooperates if the opponent has cooperated more than they have defected; otherwise, defects.'''
+
+    def strategy(self, opponent_history):
+        if not opponent_history:
+            return 'C'
+        return 'C' if opponent_history.count('C') > opponent_history.count('D') else 'D'
+
+class AdaptiveTitForTat(Player):
+    name = 'Adaptive_Tit_For_Tat'
+
+    '''Starts with cooperation but adjusts its behavior by being more forgiving if the opponent cooperates frequently.'''
+
+    def strategy(self, opponent_history):
+        if not opponent_history:
+            return 'C'
+        if opponent_history.count('C') > opponent_history.count('D'):
+            return 'C'
+        return opponent_history[-1]
+    
+
+class Punisher(Player):
+    name = 'Punisher'
+
+    '''Starts with cooperation but defects for a set number of rounds when the opponent defects.'''
+    
+    def __init__(self):
+        self.punishment_rounds = 0
+
+    def strategy(self, opponent_history):
+        if self.punishment_rounds > 0:
+            self.punishment_rounds -= 1
+            return 'D'
+        if opponent_history and opponent_history[-1] == 'D':
+            self.punishment_rounds = 2  # Punish for 2 rounds
+            return 'D'
+        return 'C'
+
+
+class Extortioner(Player):
+    name = 'Extortioner'
+
+    '''Attempts to exploit the opponent by cooperating only enough to keep them from always defecting.'''
+
+    def strategy(self, opponent_history):
+        if not opponent_history or len(opponent_history) % 3 == 0:
+            return 'C'
+        return 'D'
+
+
+class Retaliator(Player): # needs work with init method (inheritance bug - use super.()__init__ and change reset function if necessary)
+    name = 'Retaliator'
+
+    '''Cooperates until the opponent defects, then retaliates for the same number of rounds'''
+
+    def __init__(self):
+        self.retaliation_rounds = 0
+
+    def strategy(self, opponent_history):
+        if self.retaliation_rounds > 0:
+            self.retaliation_rounds -= 1
+            return 'D'
+        if opponent_history and opponent_history[-1] == 'D':
+            self.retaliation_rounds = 1  # Retaliate for 1 round
+            return 'D'
+        return 'C'
+
+
+class Spiteful(Player):
+    name = 'Spiteful'
+
+    '''Starts with cooperation but switches to Always Defect after the opponent defects a certain number of times.'''
+    
+    def __init__(self):
+        self.spited = False
+
+    def strategy(self, opponent_history):
+        if self.spited:
+            return 'D'
+        if opponent_history.count('D') >= 3:
+            self.spited = True
+            return 'D'
+        return 'C'

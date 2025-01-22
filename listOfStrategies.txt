@@ -5,3 +5,14 @@ TitForTwoTat
 Random
 Alternator
 NotNiceTitForTat
+Friedman
+Pavlov
+Prober
+Tester
+Joss
+SoftMajority
+AdaptiveTitForTat
+Punisher
+Extortioner
+Retaliator
+Spiteful
