@@ -40,4 +40,4 @@ def visualize_tournament_data(results, scores):
 
 # Example usage:
 # Assuming `results` and `scores` are the DataFrames returned by the tournament function
-visualize_tournament_data(results, scores)
+visualize_tournament_data(results, scores) # ignore for now
