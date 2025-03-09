@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Soft_Majority,Tit_for_tat,30,30
+Soft_Majority,Always_cooperate,30,30
+Soft_Majority,Always_defect,9,14
+Soft_Majority,Tit_for_two_tats,30,30
+Soft_Majority,Random,23,23
+Soft_Majority,Alternator,23,28
+Soft_Majority,Not_nice_tit_for_tat,13,13
+Soft_Majority,Grim_Trigger,30,30
+Soft_Majority,Pavlov,30,30
+Soft_Majority,Prober,13,13
+Soft_Majority,Tester,31,26
+Soft_Majority,Joss,20,25
+Soft_Majority,Soft_Majority,60,60
+Soft_Majority,Adaptive_Tit_For_Tat,30,30
+Soft_Majority,Punisher,30,30
+Soft_Majority,Extortioner,23,13
+Soft_Majority,Retaliator,30,30
+Soft_Majority,Spiteful,9,14

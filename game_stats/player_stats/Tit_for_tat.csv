@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Tit_for_tat,Tit_for_tat,60,60
+Tit_for_tat,Always_cooperate,30,30
+Tit_for_tat,Always_defect,9,14
+Tit_for_tat,Tit_for_two_tats,30,30
+Tit_for_tat,Random,22,22
+Tit_for_tat,Alternator,23,28
+Tit_for_tat,Not_nice_tit_for_tat,25,25
+Tit_for_tat,Grim_Trigger,30,30
+Tit_for_tat,Pavlov,30,30
+Tit_for_tat,Prober,25,25
+Tit_for_tat,Tester,29,29
+Tit_for_tat,Joss,23,28
+Tit_for_tat,Soft_Majority,30,30
+Tit_for_tat,Adaptive_Tit_For_Tat,30,30
+Tit_for_tat,Punisher,30,30
+Tit_for_tat,Extortioner,21,21
+Tit_for_tat,Retaliator,30,30
+Tit_for_tat,Spiteful,30,30

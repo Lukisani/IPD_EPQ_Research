@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Random,Tit_for_tat,22,22
+Random,Always_cooperate,44,9
+Random,Always_defect,7,22
+Random,Tit_for_two_tats,32,12
+Random,Random,44,44
+Random,Alternator,24,24
+Random,Not_nice_tit_for_tat,20,20
+Random,Grim_Trigger,6,41
+Random,Pavlov,24,24
+Random,Prober,20,30
+Random,Tester,13,23
+Random,Joss,19,14
+Random,Soft_Majority,23,23
+Random,Adaptive_Tit_For_Tat,20,15
+Random,Punisher,10,25
+Random,Extortioner,18,28
+Random,Retaliator,16,26
+Random,Spiteful,7,22

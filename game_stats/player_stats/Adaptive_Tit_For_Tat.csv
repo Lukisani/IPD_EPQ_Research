@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Adaptive_Tit_For_Tat,Tit_for_tat,30,30
+Adaptive_Tit_For_Tat,Always_cooperate,30,30
+Adaptive_Tit_For_Tat,Always_defect,9,14
+Adaptive_Tit_For_Tat,Tit_for_two_tats,30,30
+Adaptive_Tit_For_Tat,Random,15,20
+Adaptive_Tit_For_Tat,Alternator,23,28
+Adaptive_Tit_For_Tat,Not_nice_tit_for_tat,25,25
+Adaptive_Tit_For_Tat,Grim_Trigger,30,30
+Adaptive_Tit_For_Tat,Pavlov,30,30
+Adaptive_Tit_For_Tat,Prober,25,25
+Adaptive_Tit_For_Tat,Tester,29,29
+Adaptive_Tit_For_Tat,Joss,27,32
+Adaptive_Tit_For_Tat,Soft_Majority,30,30
+Adaptive_Tit_For_Tat,Adaptive_Tit_For_Tat,60,60
+Adaptive_Tit_For_Tat,Punisher,30,30
+Adaptive_Tit_For_Tat,Extortioner,21,21
+Adaptive_Tit_For_Tat,Retaliator,30,30
+Adaptive_Tit_For_Tat,Spiteful,9,14

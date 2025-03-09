@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Always_defect,Tit_for_tat,14,9
+Always_defect,Always_cooperate,50,0
+Always_defect,Always_defect,20,20
+Always_defect,Tit_for_two_tats,18,8
+Always_defect,Random,22,7
+Always_defect,Alternator,30,5
+Always_defect,Not_nice_tit_for_tat,10,10
+Always_defect,Grim_Trigger,14,9
+Always_defect,Pavlov,30,5
+Always_defect,Prober,14,9
+Always_defect,Tester,46,1
+Always_defect,Joss,14,9
+Always_defect,Soft_Majority,14,9
+Always_defect,Adaptive_Tit_For_Tat,14,9
+Always_defect,Punisher,14,9
+Always_defect,Extortioner,26,6
+Always_defect,Retaliator,14,9
+Always_defect,Spiteful,22,7

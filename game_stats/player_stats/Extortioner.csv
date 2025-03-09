@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Extortioner,Tit_for_tat,21,21
+Extortioner,Always_cooperate,42,12
+Extortioner,Always_defect,6,26
+Extortioner,Tit_for_two_tats,33,18
+Extortioner,Random,28,18
+Extortioner,Alternator,24,19
+Extortioner,Not_nice_tit_for_tat,18,23
+Extortioner,Grim_Trigger,13,23
+Extortioner,Pavlov,30,15
+Extortioner,Prober,10,25
+Extortioner,Tester,39,14
+Extortioner,Joss,17,22
+Extortioner,Soft_Majority,13,23
+Extortioner,Adaptive_Tit_For_Tat,21,21
+Extortioner,Punisher,13,23
+Extortioner,Extortioner,36,36
+Extortioner,Retaliator,18,23
+Extortioner,Spiteful,6,26

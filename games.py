@@ -1,7 +1,10 @@
 import pandas as pd
+import os, sys
+import csv
 
 from strategies import*
 from tournament import*
+from files import*
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
            Friedman(), Pavlov(), Prober(), Tester(), Joss(), SoftMajority(), AdaptiveTitForTat(), Punisher(),
@@ -84,6 +87,7 @@ def visualize_tournament_data_with_attributes(results, scores, strategies):
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=12)
     plt.tight_layout()
+    plt.savefig('./figures/tournament_standings.pdf')
     plt.show()
 
     # Plotting attribute-based color coding
@@ -96,6 +100,7 @@ def visualize_tournament_data_with_attributes(results, scores, strategies):
     plt.yticks(fontsize=12)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
+    plt.savefig('./figures/classifier.pdf')
     plt.show()
 
     # Visualizing the results

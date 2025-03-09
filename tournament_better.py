@@ -31,13 +31,13 @@ def play_match(player1, player2, rounds):
 
 def run_basic_tournament(players, rounds=100, average=3):
     '''Runs basic tournament with round-robin format between every strategy included, not including noise'''
-    scores = {player.name: 0 for player in players} # Dictionary to store the results of the tournament
-    results = {}
-    matchups_played = set() # Set to keep track of which matchups have already occurred
+    scores = {player.name: 0 for player in players}  # Dictionary to store the results of the tournament
+    results = []  # List to store match results as dictionaries
+    matchups_played = set()  # Set to keep track of which matchups have already occurred
 
     for i, player1 in enumerate(players):
-        '''need to edit so that score doesnt double up when played against itself'''
-        for j,player2 in enumerate(players):
+        '''Need to edit so that score doesn't double up when played against itself'''
+        for j, player2 in enumerate(players):
             matchup = tuple(sorted([player1.name, player2.name]))
             if matchup in matchups_played:
                 continue  # Skip this matchup if it's already played
@@ -48,20 +48,29 @@ def run_basic_tournament(players, rounds=100, average=3):
             # Play the match
             play_match(player1, player2, rounds)
 
-            # Store the result (can store both scores if needed)
+            # Store the result
+            results.append({
+                "player1": player1.name,
+                "player2": player2.name,
+                "player1score": player1.score,
+                "player2score": player2.score
+            })
 
-            results[(player1.name, player2.name)] = (player1.score, player2.score)
+            # Update total scores
             scores[player1.name] += player1.score
-            if player1.name != player2.name: # Prevents same player from adding score to itself twice (when played against itself)
-                # Automatically chooses first player if both the same
+            if player1.name != player2.name:  # Prevent same player from adding score to itself twice (when played against itself)
                 scores[player2.name] += player2.score
-    
-    results = pd.DataFrame(results.items(), columns=['Match', 'Score'])
-    scores = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
 
-    scores = scores.sort_values(by='Score', ascending=False).reset_index(drop=True)
+    # Create DataFrame from match results
+    results_df = pd.DataFrame(results)
 
-    return results, scores
+    # Create DataFrame from scores
+    scores_df = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
+
+    # Sort players by score
+    scores_df = scores_df.sort_values(by='Score', ascending=False).reset_index(drop=True)
+
+    return results_df, scores_df
 
 def duel(player1, player2, rounds=100, average=3):
 
