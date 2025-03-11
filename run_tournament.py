@@ -3,7 +3,7 @@ import os, sys
 import csv
 
 from strategies import*
-from tournament import*
+from delete_later.tournament import*
 from files import*
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
@@ -11,7 +11,8 @@ players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Rand
            Extortioner(), Retaliator(), Spiteful()]
 results, scores = run_basic_tournament(players, rounds=10)
 print(results)
+print(scores)
 
-save_file(results, './game_stats', 'match_results.csv')
-save_file(scores, './game_stats', 'player_scores.csv')
+save_csv_file(results, './game_stats', 'match_results_original.csv')
+save_csv_file(scores, './game_stats', 'player_scores_original.csv')
 # saves tournament results as csv files for later use

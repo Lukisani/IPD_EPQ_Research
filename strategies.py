@@ -33,6 +33,18 @@ class Player:
         '''Resets the player's state for a new tournament'''
         self.history = []
         self.score = 0
+    
+    def clone(self):
+        '''
+        Creates a new instance of the same strategy with the same initial state.
+        Subclasses inherit this method and do not need to override it.
+        '''
+        # Create a new instance of the same class
+        new_instance = self.__class__()
+        # Copy the name and classifier (if they are instance-specific)
+        new_instance.name = self.name
+        new_instance.classifier = self.classifier.copy()
+        return new_instance
 
 
 

@@ -39,6 +39,6 @@ for player in players:
     player_results = pd.DataFrame(player_results)
     
     # Save the player's results to a CSV file
-    save_file(player_results, './game_stats/player_stats', f"{player}.csv")
+    save_csv_file(player_results, './game_stats/player_stats', f"{player}.csv")
 
 

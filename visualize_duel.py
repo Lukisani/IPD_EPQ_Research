@@ -1,4 +1,4 @@
-from tournament import*
+from delete_later.tournament import*
 from strategies import*
 
 import matplotlib.pyplot as plt

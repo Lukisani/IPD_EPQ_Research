@@ -29,7 +29,7 @@ def play_match(player1, player2, rounds):
             player1.score += 1
             player2.score += 1
 
-def run_basic_tournament(players, rounds=100, average=3):
+def run_basic_tournament(players, rounds=100):
     '''Runs basic tournament with round-robin format between every strategy included, not including noise'''
     scores = {player.name: 0 for player in players}  # Dictionary to store the results of the tournament
     results = []  # List to store match results as dictionaries
@@ -45,21 +45,29 @@ def run_basic_tournament(players, rounds=100, average=3):
             # Record this matchup as played
             matchups_played.add(matchup)
 
-            # Play the match
-            play_match(player1, player2, rounds)
-
-            # Store the result
-            results.append({
-                "player1": player1.name,
-                "player2": player2.name,
-                "player1score": player1.score,
-                "player2score": player2.score
-            })
-
-            # Update total scores
-            scores[player1.name] += player1.score
-            if player1.name != player2.name:  # Prevent same player from adding score to itself twice (when played against itself)
+            if player1.name == player2.name:
+                # Self-play: Use clones to avoid shared state
+                p1_clone = player1.clone()
+                p2_clone = player2.clone()
+                play_match(p1_clone, p2_clone, rounds)
+                scores[player1.name] += p1_clone.score + p2_clone.score
+                results.append({
+                    "player1": player1.name,
+                    "player2": player2.name,
+                    "player1score": p1_clone.score,
+                    "player2score": p2_clone.score
+                })
+            else:
+                # Regular play between distinct strategies
+                play_match(player1, player2, rounds)
+                scores[player1.name] += player1.score
                 scores[player2.name] += player2.score
+                results.append({
+                    "player1": player1.name,
+                    "player2": player2.name,
+                    "player1score": player1.score,
+                    "player2score": player2.score
+                })
 
     # Create DataFrame from match results
     results_df = pd.DataFrame(results)
@@ -72,7 +80,7 @@ def run_basic_tournament(players, rounds=100, average=3):
 
     return results_df, scores_df
 
-def duel(player1, player2, rounds=100, average=3):
+def duel(player1, player2, rounds=100):
 
     '''To view a full one-on-one match between two strategies for analysis'''
 

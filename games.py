@@ -3,7 +3,7 @@ import os, sys
 import csv
 
 from strategies import*
-from tournament import*
+from delete_later.tournament import*
 from files import*
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
@@ -79,7 +79,7 @@ def visualize_tournament_data_with_attributes(results, scores, strategies):
     df_classifier = pd.DataFrame(data)
     
     # Plotting scores
-    plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(10, 6))
     sns.barplot(x='Score', y='Player', data=scores.sort_values(by='Score', ascending=False), palette='viridis')
     plt.title('Player Scores in the Tournament', fontsize=16)
     plt.xlabel('Score', fontsize=14)
@@ -87,11 +87,11 @@ def visualize_tournament_data_with_attributes(results, scores, strategies):
     plt.xticks(fontsize=12)
     plt.yticks(fontsize=12)
     plt.tight_layout()
-    plt.savefig('./figures/tournament_standings.pdf')
+    save_pdf_file(fig, './figures', 'tournament_standings.pdf')
     plt.show()
 
     # Plotting attribute-based color coding
-    plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(10, 6))
     sns.scatterplot(x='Attribute', y='Value', hue='Player', data=df_classifier, palette='coolwarm', s=100)
     plt.title('Classifier Attributes of Strategies', fontsize=16)
     plt.xlabel('Attribute', fontsize=14)
@@ -101,6 +101,7 @@ def visualize_tournament_data_with_attributes(results, scores, strategies):
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     plt.tight_layout()
     plt.savefig('./figures/classifier.pdf')
+    save_pdf_file(fig, './figures', 'classifier.pdf')
     plt.show()
 
     # Visualizing the results

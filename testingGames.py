@@ -1,5 +1,5 @@
 from strategies import*
-from tournament import*
+from delete_later.tournament import*
 
 scores, results = duel(Random(), TitForTat(), rounds=20)
 print(scores)

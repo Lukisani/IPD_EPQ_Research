@@ -29,7 +29,7 @@ def play_match(player1, player2, rounds):
             player1.score += 1
             player2.score += 1
 
-def run_basic_tournament(players, rounds=100, average=3):
+def run_basic_tournament(players, rounds=100):
     '''Runs basic tournament with round-robin format between every strategy included, not including noise'''
     scores = {player.name: 0 for player in players} # Dictionary to store the results of the tournament
     results = {}
