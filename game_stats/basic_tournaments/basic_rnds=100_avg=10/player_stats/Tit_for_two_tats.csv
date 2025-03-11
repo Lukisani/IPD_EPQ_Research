@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Tit_for_two_tats,Tit_for_tat,300.0,300.0
+Tit_for_two_tats,Always_cooperate,300.0,300.0
+Tit_for_two_tats,Always_defect,98.0,108.0
+Tit_for_two_tats,Tit_for_two_tats,300.0,300.0
+Tit_for_two_tats,Random,184.8,312.3
+Tit_for_two_tats,Alternator,150.0,400.0
+Tit_for_two_tats,Not_nice_tit_for_tat,297.0,302.0
+Tit_for_two_tats,Grim_Trigger,300.0,300.0
+Tit_for_two_tats,Pavlov,300.0,300.0
+Tit_for_two_tats,Prober,294.0,304.0
+Tit_for_two_tats,Tester,101.0,116.0
+Tit_for_two_tats,Joss,258.1,299.6
+Tit_for_two_tats,Soft_Majority,300.0,300.0
+Tit_for_two_tats,Adaptive_Tit_For_Tat,300.0,300.0
+Tit_for_two_tats,Punisher,300.0,300.0
+Tit_for_two_tats,Extortioner,168.0,333.0
+Tit_for_two_tats,Retaliator,297.0,302.0
+Tit_for_two_tats,Spiteful,98.0,108.0

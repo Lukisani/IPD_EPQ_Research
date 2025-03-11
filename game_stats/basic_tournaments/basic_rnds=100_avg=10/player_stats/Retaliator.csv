@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Retaliator,Tit_for_tat,126.3,121.8
+Retaliator,Always_cooperate,300.0,300.0
+Retaliator,Always_defect,99.0,104.0
+Retaliator,Tit_for_two_tats,302.0,297.0
+Retaliator,Random,251.4,171.4
+Retaliator,Alternator,297.4,56.4
+Retaliator,Not_nice_tit_for_tat,103.0,103.0
+Retaliator,Grim_Trigger,103.0,103.0
+Retaliator,Pavlov,300.0,300.0
+Retaliator,Prober,103.0,103.0
+Retaliator,Tester,302.0,292.0
+Retaliator,Joss,123.8,123.8
+Retaliator,Soft_Majority,221.2,221.2
+Retaliator,Adaptive_Tit_For_Tat,300.0,300.0
+Retaliator,Punisher,103.0,103.0
+Retaliator,Extortioner,203.0,198.0
+Retaliator,Retaliator,300.0,300.0
+Retaliator,Spiteful,99.0,104.0
