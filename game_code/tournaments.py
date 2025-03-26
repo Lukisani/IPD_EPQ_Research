@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def play_match(player1, player2, rounds): # Procedure
+def play_match(player1, player2, rounds, reward=3, temptation=5, sucker=0, punishment=1): # Procedure
     '''Plays a match between two players'''
 
     player1.reset()
@@ -17,19 +17,19 @@ def play_match(player1, player2, rounds): # Procedure
 
         # Update scores
         if p1_move == 'C' and p2_move == "C":
-            player1.score += 3
-            player2.score += 3
+            player1.score += reward
+            player2.score += reward
         elif p1_move == "C" and p2_move == "D":
-            player1.score += 0
-            player2.score += 5
+            player1.score += sucker
+            player2.score += temptation
         elif p1_move == "D" and p2_move == "C":
-            player1.score += 5
-            player2.score += 0
+            player1.score += temptation
+            player2.score += sucker
         else:
-            player1.score += 1
-            player2.score += 1
+            player1.score += punishment
+            player2.score += punishment
 
-def run_basic_tournament(players, rounds=100):
+def run_basic_tournament(players, reward, temptation, sucker, punishment, rounds=100):
     '''Runs basic tournament with round-robin format between every strategy included, not including noise'''
     scores = {player.name: 0 for player in players}  # Dictionary to store the results of the tournament
     results = []  # List to store match results as dictionaries
@@ -49,8 +49,8 @@ def run_basic_tournament(players, rounds=100):
                 # Self-play: Use clones to avoid shared state
                 p1_clone = player1.clone()
                 p2_clone = player2.clone()
-                play_match(p1_clone, p2_clone, rounds)
-                scores[player1.name] += p1_clone.score + p2_clone.score
+                play_match(p1_clone, p2_clone, rounds, reward, temptation, sucker, punishment)
+                scores[player1.name] += p1_clone.score # + p2_clone.score <-- add if both clone scores wanted
                 results.append({
                     "player1": player1.name,
                     "player2": player2.name,
@@ -59,7 +59,7 @@ def run_basic_tournament(players, rounds=100):
                 })
             else:
                 # Regular play between distinct strategies
-                play_match(player1, player2, rounds)
+                play_match(player1, player2, rounds, reward, temptation, sucker, punishment)
                 scores[player1.name] += player1.score
                 scores[player2.name] += player2.score
                 results.append({
@@ -82,22 +82,34 @@ def run_basic_tournament(players, rounds=100):
 
 
 
-def duel(player1, player2, rounds=100, average=5):
+def duel(player1, player2, rounds=100, reward=3, temptation=5, sucker=0, punishment=1):
 
     '''To view a full one-on-one match between two strategies for analysis'''
 
-    play_match(player1, player2, rounds)
+    if player1.name == player2.name:
+        # Self-play: Use clones to avoid shared state
+        p1_clone = player1.clone()
+        p2_clone = player2.clone()
+        play_match(p1_clone, p2_clone, rounds, reward, temptation, sucker, punishment)
+        scores = {
+            f'{p1_clone.name}(1)' : p1_clone.score,
+            f'{p2_clone.name}(2)' : p2_clone.score}
+        results = {
+            'Round' : list(range(1, rounds+1)),
+            f'{p1_clone.name}(1)' : p1_clone.history,
+            f'{p2_clone.name}(2)' : p2_clone.history}     
+    else:
+        # Regular play between distinct strategies
+        play_match(player1, player2, rounds, reward, temptation, sucker, punishment)
+        scores = {
+            player1.name : player1.score,
+            player2.name : player2.score
+         }
+        results = {
+            'Round' : list(range(1, rounds+1)),
+            player1.name : player1.history,
+            player2.name : player2.history}
 
-    scores = {
-        player1.name : player1.score,
-        player2.name : player2.score
-    }
-
-    results = {
-        'Round' : list(range(1, rounds+1)),
-        player1.name : player1.history,
-        player2.name : player2.history
-        }
-    
-    results = pd.DataFrame(results).T
+    scores = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
+    results = pd.DataFrame(results)
     return scores, results

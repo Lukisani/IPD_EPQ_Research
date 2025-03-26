@@ -36,6 +36,19 @@ def create_folder(new_folder_path):
         print(f"Folder created successfully at: {new_folder_path}")
     else:
         print(f"Folder already exists at: {new_folder_path}... Not saving")
+
+def create_meta_file(folder_path, filename, **kwargs):
+    file_path = os.path.join(folder_path, filename)
+
+    # Check if file exists before saving
+    if not os.path.exists(file_path):
+        with open(file_path, 'w') as file:
+            for key, value in kwargs.items():
+                file.write(f'{key}: {value}\n')
+        print(f"{filename} saved successfully.")
+    else:
+        print(f"{filename} already exists. Not saving.")
+
     
 
 def get_direc():
