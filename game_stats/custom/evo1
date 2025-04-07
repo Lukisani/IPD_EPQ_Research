@@ -1,0 +1,6 @@
+Always_cooperate,Always_defect,Tit_for_tat
+2,4,4
+2,4,8
+4,4,16
+8,4,32
+16,4,64

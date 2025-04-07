@@ -1,0 +1,121 @@
+player1,player2,player1score,player2score
+Tit For Tat,Tit For Tat,600.0,600.0
+Tit For Tat,Tideman & Chieruzzi,599.2,599.2
+Tit For Tat,Nydegger,600.0,600.0
+Tit For Tat,Grofman,600.0,600.0
+Tit For Tat,Shubik,239.1,243.6
+Tit For Tat,Stein & Rapoport,597.2,597.2
+Tit For Tat,Grudger,600.0,600.0
+Tit For Tat,Davis,239.4,243.9
+Tit For Tat,Graaskamp,600.0,600.0
+Tit For Tat,Downing,600.0,600.0
+Tit For Tat,Feld,443.6,446.6
+Tit For Tat,Joss,251.9,256.9
+Tit For Tat,Tullock,600.0,600.0
+Tit For Tat,Anonymous,489.1,491.1
+Tit For Tat,Random,454.1,457.6
+Tideman & Chieruzzi,Tideman & Chieruzzi,600.0,600.0
+Tideman & Chieruzzi,Nydegger,600.0,600.0
+Tideman & Chieruzzi,Grofman,600.0,600.0
+Tideman & Chieruzzi,Shubik,61.8,952.8
+Tideman & Chieruzzi,Stein & Rapoport,600.0,600.0
+Tideman & Chieruzzi,Grudger,600.0,600.0
+Tideman & Chieruzzi,Davis,581.3,607.3
+Tideman & Chieruzzi,Graaskamp,600.0,600.0
+Tideman & Chieruzzi,Downing,600.0,600.0
+Tideman & Chieruzzi,Feld,397.3,505.3
+Tideman & Chieruzzi,Joss,472.6,543.6
+Tideman & Chieruzzi,Tullock,594.9,599.4
+Tideman & Chieruzzi,Anonymous,479.1,457.6
+Tideman & Chieruzzi,Random,447.9,450.9
+Nydegger,Nydegger,600.0,600.0
+Nydegger,Grofman,600.0,600.0
+Nydegger,Shubik,237.3,250.8
+Nydegger,Stein & Rapoport,599.7,600.2
+Nydegger,Grudger,600.0,600.0
+Nydegger,Davis,600.0,600.0
+Nydegger,Graaskamp,600.0,600.0
+Nydegger,Downing,600.0,600.0
+Nydegger,Feld,402.9,510.9
+Nydegger,Joss,422.8,482.8
+Nydegger,Tullock,600.0,600.0
+Nydegger,Anonymous,456.6,611.6
+Nydegger,Random,408.9,539.4
+Grofman,Grofman,600.0,600.0
+Grofman,Shubik,150.9,596.4
+Grofman,Stein & Rapoport,600.0,600.0
+Grofman,Grudger,600.0,600.0
+Grofman,Davis,600.0,600.0
+Grofman,Graaskamp,600.0,600.0
+Grofman,Downing,600.0,600.0
+Grofman,Feld,453.3,448.8
+Grofman,Joss,389.2,422.7
+Grofman,Tullock,600.0,600.0
+Grofman,Anonymous,475.1,451.1
+Grofman,Random,439.0,460.0
+Shubik,Shubik,600.0,600.0
+Shubik,Stein & Rapoport,314.8,221.3
+Shubik,Grudger,243.6,239.1
+Shubik,Davis,243.6,239.1
+Shubik,Graaskamp,276.0,231.0
+Shubik,Downing,243.6,239.1
+Shubik,Feld,845.2,41.7
+Shubik,Joss,204.0,199.0
+Shubik,Tullock,204.0,199.0
+Shubik,Anonymous,439.2,140.2
+Shubik,Random,598.8,100.3
+Stein & Rapoport,Stein & Rapoport,600.0,600.0
+Stein & Rapoport,Grudger,558.3,568.3
+Stein & Rapoport,Davis,227.7,308.7
+Stein & Rapoport,Graaskamp,600.0,600.0
+Stein & Rapoport,Downing,600.0,600.0
+Stein & Rapoport,Feld,429.7,473.7
+Stein & Rapoport,Joss,434.2,489.2
+Stein & Rapoport,Tullock,597.0,597.0
+Stein & Rapoport,Anonymous,486.9,518.9
+Stein & Rapoport,Random,439.8,495.8
+Grudger,Grudger,600.0,600.0
+Grudger,Davis,319.3,322.8
+Grudger,Graaskamp,600.0,600.0
+Grudger,Downing,600.0,600.0
+Grudger,Feld,832.8,58.8
+Grudger,Joss,224.8,225.3
+Grudger,Tullock,600.0,600.0
+Grudger,Anonymous,457.4,150.4
+Grudger,Random,585.2,110.7
+Davis,Davis,600.0,600.0
+Davis,Graaskamp,354.1,320.1
+Davis,Downing,362.4,359.4
+Davis,Feld,725.7,170.7
+Davis,Joss,207.3,203.3
+Davis,Tullock,323.4,319.9
+Davis,Anonymous,431.6,172.6
+Davis,Random,571.0,167.5
+Graaskamp,Graaskamp,600.0,600.0
+Graaskamp,Downing,600.0,600.0
+Graaskamp,Feld,447.1,465.6
+Graaskamp,Joss,308.9,335.9
+Graaskamp,Tullock,600.0,600.0
+Graaskamp,Anonymous,470.7,512.2
+Graaskamp,Random,446.0,464.5
+Downing,Downing,600.0,600.0
+Downing,Feld,454.7,469.7
+Downing,Joss,543.9,637.4
+Downing,Tullock,600.0,600.0
+Downing,Anonymous,426.2,602.2
+Downing,Random,466.7,401.2
+Feld,Feld,481.7,436.7
+Feld,Joss,426.8,465.8
+Feld,Tullock,486.0,446.5
+Feld,Anonymous,464.0,452.0
+Feld,Random,450.9,453.4
+Joss,Joss,226.7,226.7
+Joss,Tullock,637.4,543.9
+Joss,Anonymous,454.9,408.4
+Joss,Random,468.0,416.0
+Tullock,Tullock,600.0,600.0
+Tullock,Anonymous,423.4,489.4
+Tullock,Random,460.2,425.2
+Anonymous,Anonymous,463.2,460.2
+Anonymous,Random,436.5,464.5
+Random,Random,460.5,442.0

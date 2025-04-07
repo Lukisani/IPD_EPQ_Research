@@ -18,16 +18,7 @@ players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Rand
            Friedman(), Pavlov(), Prober(), Tester(), Joss(), SoftMajority(), AdaptiveTitForTat(), Punisher(),
            Extortioner(), Retaliator(), Spiteful()]
 
-# results, scores = run_noisy_tournament(players, rounds=100)
-# print(results)
-# print(scores)
-
-# save_csv_file(results, './game_stats', 'match_results_even_better.csv')
-# save_csv_file(scores, './game_stats', 'player_scores_even_better.csv')
-# saves tournament results as csv files for later use
-
-def average_noisy_tournament(rounds=100, average=10, noise=0, reward=3, temptation=5, sucker=0, punishment=1):
-    print('rounds=', rounds)
+def average_noisy_tournament(rounds=100, average=10, noise=0.0, reward=3, temptation=5, sucker=0, punishment=1):
     print()
     print()
     list_of_results = []
@@ -76,7 +67,7 @@ def average_noisy_tournament(rounds=100, average=10, noise=0, reward=3, temptati
 
     create_meta_file(new_folder_path, 'metadata.txt', **meta)
 
-average_noisy_tournament()
+average_noisy_tournament(rounds=200, noise=.05)
 
 # scores, results = duel(TitForTat(),TitForTat(), rounds=20, noise=.1)
 # print(scores)

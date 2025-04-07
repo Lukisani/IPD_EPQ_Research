@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from game_code.tournaments import*
 from strategies import*
+from files import*
 
 def plot_moves(results):
     '''
@@ -185,6 +186,8 @@ def combined_visualization(scores, results, player1_name, player2_name):
     
     plt.tight_layout()
     plt.show()
-
-scores, results = duel(TitForTat(), Random(), rounds=20)
-combined_visualization(scores, results, TitForTat().name, Random().name)
+    
+player1 = AdaptiveTitForTat()
+player2 = Joss()
+scores, results = duel(player1, player2, rounds=100)
+combined_visualization(scores, results, player1.name, player2.name)

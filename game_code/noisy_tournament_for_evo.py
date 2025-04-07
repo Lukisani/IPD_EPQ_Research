@@ -1,7 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import random
 
-def play_match(player1, player2, rounds, reward=3, temptation=5, sucker=0, punishment=1): # Procedure
+def noisy_move(move, noise):
+    num = random.random()
+    if num <= noise:
+        if move == 'C':
+            move = 'D'
+        else:
+            move = 'C'
+    return move
+
+def play_noisy_match(player1, player2, rounds, noise, reward=3, temptation=5, sucker=0, punishment=1): # Procedure
     '''Plays a match between two players'''
 
     player1.reset()
@@ -12,8 +22,8 @@ def play_match(player1, player2, rounds, reward=3, temptation=5, sucker=0, punis
         p2_move = player2.strategy(player1.history)
 
         # Update histories
-        player1.history.append(p1_move)
-        player2.history.append(p2_move)
+        player1.history.append(noisy_move(p1_move, noise))
+        player2.history.append(noisy_move(p2_move, noise))
 
         # Update scores
         if p1_move == 'C' and p2_move == "C":
@@ -29,8 +39,8 @@ def play_match(player1, player2, rounds, reward=3, temptation=5, sucker=0, punis
             player1.score += punishment
             player2.score += punishment
 
-def run_basic_tournament(players, reward, temptation, sucker, punishment, rounds=100):
-    '''Runs basic tournament with round-robin format between every strategy included, not including noise'''
+def run_noisy_tournament(players, reward, temptation, sucker, punishment, rounds=10, noise=0):
+    '''Runs noisy tournament with round-robin format between every strategy included, including noise'''
     scores = {player.name: 0 for player in players}  # Dictionary to store the results of the tournament
     results = []  # List to store match results as dictionaries
     matchups_played = set()  # Set to keep track of which matchups have already occurred
@@ -46,20 +56,10 @@ def run_basic_tournament(players, reward, temptation, sucker, punishment, rounds
             matchups_played.add(matchup)
 
             if player1.name == player2.name:
-                # Self-play: Use clones to avoid shared state
-                p1_clone = player1.clone()
-                p2_clone = player2.clone()
-                play_match(p1_clone, p2_clone, rounds, reward, temptation, sucker, punishment)
-                scores[player1.name] += p1_clone.score  + p2_clone.score # <-- add if both clone scores wanted
-                results.append({
-                    "player1": player1.name,
-                    "player2": player2.name,
-                    "player1score": p1_clone.score,
-                    "player2score": p2_clone.score
-                })
+                continue # Skip if player is playing himself
             else:
                 # Regular play between distinct strategies
-                play_match(player1, player2, rounds, reward, temptation, sucker, punishment)
+                play_noisy_match(player1, player2, rounds, noise, reward, temptation, sucker, punishment)
                 scores[player1.name] += player1.score
                 scores[player2.name] += player2.score
                 results.append({
@@ -82,7 +82,7 @@ def run_basic_tournament(players, reward, temptation, sucker, punishment, rounds
 
 
 
-def duel(player1, player2, rounds=100, reward=3, temptation=5, sucker=0, punishment=1):
+def duel(player1, player2, rounds, noise, reward=3, temptation=5, sucker=0, punishment=1):
 
     '''To view a full one-on-one match between two strategies for analysis'''
 
@@ -90,7 +90,7 @@ def duel(player1, player2, rounds=100, reward=3, temptation=5, sucker=0, punishm
         # Self-play: Use clones to avoid shared state
         p1_clone = player1.clone()
         p2_clone = player2.clone()
-        play_match(p1_clone, p2_clone, rounds, reward, temptation, sucker, punishment)
+        play_noisy_match(p1_clone, p2_clone, rounds, noise)
         scores = {
             f'{p1_clone.name}(1)' : p1_clone.score,
             f'{p2_clone.name}(2)' : p2_clone.score}
@@ -100,7 +100,7 @@ def duel(player1, player2, rounds=100, reward=3, temptation=5, sucker=0, punishm
             f'{p2_clone.name}(2)' : p2_clone.history}     
     else:
         # Regular play between distinct strategies
-        play_match(player1, player2, rounds, reward, temptation, sucker, punishment)
+        play_noisy_match(player1, player2, rounds, noise)
         scores = {
             player1.name : player1.score,
             player2.name : player2.score
@@ -113,3 +113,6 @@ def duel(player1, player2, rounds=100, reward=3, temptation=5, sucker=0, punishm
     scores = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
     results = pd.DataFrame(results)
     return scores, results
+
+# stuff = [noisy_move('C', 1) for i in range(10)]
+# print(stuff)

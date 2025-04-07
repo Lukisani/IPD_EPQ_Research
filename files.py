@@ -56,7 +56,8 @@ def get_direc():
          'basic_tournaments': './game_stats/basic_tournaments',
          'fig_dir': './figures',
          'noisy_tournaments' : './game_stats/noisy_tournaments',
-         'original_data' : './game_stats/original_data'
+         'original_data' : './game_stats/original_data',
+         'custom' : './game_stats/custom'
          }
 
 class ObjectView(object):

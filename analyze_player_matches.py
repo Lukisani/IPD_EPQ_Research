@@ -50,7 +50,7 @@ def get_player_stats(folder_directory, filename):
         # Save the player's results to a CSV file
         save_csv_file(player_results, f'{folder_directory}/{new_folder_name}', f"{player}.csv")
 
-folder_directory = './game_stats/basic_tournaments/basic_rnds=100_avg=10'
-filename = 'basic_results_rnds=100_avg=10'
+folder_directory = './game_stats/custom/axelrod1.1'
+filename = 'basic_results_rnds=200_avg=10'
 
 get_player_stats(folder_directory, filename)
