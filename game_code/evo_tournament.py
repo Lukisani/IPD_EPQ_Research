@@ -67,7 +67,7 @@ def evolution_tournament(initial_players, generations, num_alter=3, rounds=10, n
             strategy_stats[player.name]['count'] += 1
             strategy_stats[player.name]['total_score'] += player.score
         
-        print(strategy_stats)
+        # print(strategy_stats)
         
         # Record population composition
         composition = {name: stats['count'] for name, stats in strategy_stats.items()}
@@ -80,16 +80,31 @@ def evolution_tournament(initial_players, generations, num_alter=3, rounds=10, n
         
         # Evolutionary selection - sort by individual scores
         population.sort(key=lambda x: x.score, reverse=True)
+
+        # names = []
+        # for i in population:
+        #     names.append(i.name)
+        # print('old pop:',names)
         
         # Remove bottom 3 and duplicate top 3
-        new_population = population[:num_alter*-1]  # Keep all but last 3
-        top_performers = population[:num_alter]  # Get top 3
+        new_population = population[:num_alter*-1]  # Keep all but last num_alter (default 3)
+        top_performers = population[:num_alter]  # Get top num_alter (default 3)
         
         # Add clones of top performers
         new_population.extend([p.clone() for p in top_performers])
         
         # Update population for next generation
         population = new_population
+        
+        # names = []
+        # for i in population:
+        #     names.append(i.name)
+        # print('new pop:', names)
+
+        # names = []
+        # for i in population:
+        #     names.append(i.name)
+        # print(names)
 
     return population_history, score_history
 
@@ -112,6 +127,9 @@ pop_history, score_history = evolution_tournament(
     sucker=0,
     punishment=1
 )
+
+# print(pop_history)
+# print(score_history)
 
 # Analyze results
 final_population = pop_history[-1]

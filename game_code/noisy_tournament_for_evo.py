@@ -18,12 +18,12 @@ def play_noisy_match(player1, player2, rounds, noise, reward=3, temptation=5, su
     player2.reset()
 
     for _ in range(rounds):
-        p1_move = player1.strategy(player2.history)
-        p2_move = player2.strategy(player1.history)
+        p1_move = noisy_move(player1.strategy(player2.history))
+        p2_move = noisy_move(player2.strategy(player1.history))
 
         # Update histories
-        player1.history.append(noisy_move(p1_move, noise))
-        player2.history.append(noisy_move(p2_move, noise))
+        player1.history.append(p1_move)
+        player2.history.append(p2_move)
 
         # Update scores
         if p1_move == 'C' and p2_move == "C":

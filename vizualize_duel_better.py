@@ -187,7 +187,7 @@ def combined_visualization(scores, results, player1_name, player2_name):
     plt.tight_layout()
     plt.show()
     
-player1 = AdaptiveTitForTat()
+player1 = TitForTat()
 player2 = Joss()
 scores, results = duel(player1, player2, rounds=100)
 combined_visualization(scores, results, player1.name, player2.name)

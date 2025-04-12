@@ -199,7 +199,7 @@ class Prober(Player):
 
 class Tester(Player):
     name = 'Tester'
-    '''Starts with "DCC", then cooperates if the opponent defects in response to defection; otherwise, defects forever.'''
+    '''Starts with "DCC", then plays tit for tat if the opponent defects in response to defection; otherwise, defects forever.'''
     
     classifier = {
         'niceness': 0,
@@ -209,7 +209,7 @@ class Tester(Player):
     def strategy(self, opponent_history):
         if len(opponent_history) < 3:
             return 'D' if len(opponent_history) == 0 else 'C'
-        return 'C' if opponent_history[1] == 'D' else 'D'
+        return opponent_history[-1] if opponent_history[1] == 'D' else 'D'
 
 
 class Joss(Player):
@@ -388,8 +388,8 @@ class GradualRetaliator(Player):
         return 'C'
 
 class NicerTester(Player):
-    name = 'Tester'
-    '''Starts with "CCD", then cooperates if the opponent defects in response to defection; otherwise, defects forever.'''
+    name = 'NicerTester'
+    '''Starts with "CDCC", then cooperates if the opponent defects in response to defection; otherwise, defects forever.'''
     
     classifier = {
         'niceness': 0,
@@ -398,8 +398,8 @@ class NicerTester(Player):
 
     def strategy(self, opponent_history):
         if opponent_history:
-            if len(opponent_history) < 3:
-                return 'D' if len(opponent_history) == 0 else 'C'
-            return 'C' if opponent_history[1] == 'D' else 'D'
+            if len(opponent_history) < 4:
+                return 'D' if len(opponent_history) == 1 else 'C'
+            return opponent_history[-1] if opponent_history[2] == 'D' else 'D'
         else:
             return 'C'
