@@ -42,15 +42,15 @@ def play_noisy_match(player1, player2, rounds, noise, reward=3, temptation=5, su
             player2.score += punishment
 
 def run_noisy_tournament(players, reward, temptation, sucker, punishment, rounds=10, noise=0):
-    '''Runs noisy tournament with round-robin format between every strategy included, including noise'''
-    # Initialize tracking
-    scores = {player.name: 0 for player in players}  # Maintains your original format
+    '''Modified to track individual instances while maintaining DataFrame output'''
+    # Track individual instances with unique IDs
+    player_ids = {id(p): p for p in players}
+    scores = {id(p): 0 for p in players}  # Track by instance ID
     results = []
-    seen_pairs = set()  # Tracks actual matchups using player objects
+    seen_pairs = set()
 
     for i, player1 in enumerate(players):
         for j, player2 in enumerate(players):
-            # Skip self-play and duplicates using object IDs
             if player1 is player2:
                 continue
                 
@@ -59,24 +59,34 @@ def run_noisy_tournament(players, reward, temptation, sucker, punishment, rounds
                 continue
             seen_pairs.add(pair)
 
-            # Always use clones to prevent state leakage
             p1_clone = deepcopy(player1)
             p2_clone = deepcopy(player2)
             play_noisy_match(p1_clone, p2_clone, rounds, noise, reward, temptation, sucker, punishment)
             
-            # Record results (same format as your original)
-            scores[p1_clone.name] += p1_clone.score
-            scores[p2_clone.name] += p2_clone.score
+            scores[id(player1)] += p1_clone.score
+            scores[id(player2)] += p2_clone.score
+            
             results.append({
-                "player1": p1_clone.name,
-                "player2": p2_clone.name,
+                "player1": player1.name,
+                "player2": player2.name,
+                "player1_instance": id(player1),
+                "player2_instance": id(player2),
                 "player1score": p1_clone.score,
                 "player2score": p2_clone.score
             })
 
-    # Create DataFrames with your original structure
+    # Convert to your desired output format while preserving individual scores
     results_df = pd.DataFrame(results)
-    scores_df = pd.DataFrame(scores.items(), columns=['Player', 'Score']).sort_values('Score', ascending=False)
+    
+    # Create scores DataFrame with instance information
+    scores_df = pd.DataFrame([
+        {
+            'Player': player_ids[pid].name,
+            'Instance_ID': pid,
+            'Score': score
+        }
+        for pid, score in scores.items()
+    ]).sort_values('Score', ascending=False)
     
     return results_df, scores_df.reset_index(drop=True)
 
