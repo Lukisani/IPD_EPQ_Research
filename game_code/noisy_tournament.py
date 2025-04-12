@@ -18,8 +18,8 @@ def play_noisy_match(player1, player2, rounds, noise, reward=3, temptation=5, su
     player2.reset()
 
     for _ in range(rounds):
-        p1_move = noisy_move(player1.strategy(player2.history))
-        p2_move = noisy_move(player2.strategy(player1.history))
+        p1_move = noisy_move(player1.strategy(player2.history), noise)
+        p2_move = noisy_move(player2.strategy(player1.history), noise)
 
         # Update histories
         player1.history.append(p1_move)
@@ -123,6 +123,3 @@ def duel(player1, player2, rounds, noise, reward=3, temptation=5, sucker=0, puni
     scores = pd.DataFrame(scores.items(), columns=['Player', 'Score'])
     results = pd.DataFrame(results)
     return scores, results
-
-# stuff = [noisy_move('C', 1) for i in range(10)]
-# print(stuff)
