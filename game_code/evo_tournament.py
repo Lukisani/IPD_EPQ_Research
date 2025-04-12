@@ -51,10 +51,11 @@ def evolution_tournament(initial_players, generations, num_alter=3, rounds=10, n
         # Run tournament (we only need the scores_df here)
         _, scores_df = run_noisy_tournament(population, reward, temptation, 
                                           sucker, punishment, rounds, noise)
-        print(scores_df)
+        # print(scores_df)
         
         # Create a score mapping for all players
-        score_mapping = {player: player.score for player in population}
+        score_mapping = {player.name: player.score for player in population}
+        print(score_mapping)
         
         # Calculate strategy statistics
         strategy_stats = {}
@@ -80,11 +81,6 @@ def evolution_tournament(initial_players, generations, num_alter=3, rounds=10, n
         
         # Evolutionary selection - sort by individual scores
         population.sort(key=lambda x: x.score, reverse=True)
-
-        # names = []
-        # for i in population:
-        #     names.append(i.name)
-        # print('old pop:',names)
         
         # Remove bottom 3 and duplicate top 3
         new_population = population[:num_alter*-1]  # Keep all but last num_alter (default 3)
@@ -95,11 +91,6 @@ def evolution_tournament(initial_players, generations, num_alter=3, rounds=10, n
         
         # Update population for next generation
         population = new_population
-        
-        # names = []
-        # for i in population:
-        #     names.append(i.name)
-        # print('new pop:', names)
 
         # names = []
         # for i in population:

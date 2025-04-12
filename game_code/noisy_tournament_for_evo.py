@@ -43,14 +43,14 @@ def play_noisy_match(player1, player2, rounds, noise, reward=3, temptation=5, su
 
 def run_noisy_tournament(players, reward, temptation, sucker, punishment, rounds=10, noise=0):
     '''Runs noisy tournament with round-robin format between every strategy included, including noise'''
-    scores = {player: 0 for player in players}  # Individual total scores
-    match_counts = {player: 0 for player in players}  # Matches per player
-    results = []  # For storing match details
-    seen_pairs = set()  # Track played matchups using frozenset of ids
+    # Initialize tracking
+    scores = {player.name: 0 for player in players}  # Maintains your original format
+    results = []
+    seen_pairs = set()  # Tracks actual matchups using player objects
 
     for i, player1 in enumerate(players):
         for j, player2 in enumerate(players):
-            # Skip self-play and duplicate matchups
+            # Skip self-play and duplicates using object IDs
             if player1 is player2:
                 continue
                 
@@ -59,39 +59,26 @@ def run_noisy_tournament(players, reward, temptation, sucker, punishment, rounds
                 continue
             seen_pairs.add(pair)
 
-            # Clone players to isolate match state
+            # Always use clones to prevent state leakage
             p1_clone = deepcopy(player1)
             p2_clone = deepcopy(player2)
+            play_noisy_match(p1_clone, p2_clone, rounds, noise, reward, temptation, sucker, punishment)
             
-            # Play match with noise
-            play_noisy_match(p1_clone, p2_clone, rounds, noise, 
-                            reward, temptation, sucker, punishment)
-            
-            # Record scores
-            scores[player1] += p1_clone.score
-            scores[player2] += p2_clone.score
-            match_counts[player1] += 1
-            match_counts[player2] += 1
-            
-            # Store match results
+            # Record results (same format as your original)
+            scores[p1_clone.name] += p1_clone.score
+            scores[p2_clone.name] += p2_clone.score
             results.append({
-                "player1": player1.name,
-                "player2": player2.name,
-                "player1_score": p1_clone.score,
-                "player2_score": p2_clone.score,
-                "rounds": rounds
+                "player1": p1_clone.name,
+                "player2": p2_clone.name,
+                "player1score": p1_clone.score,
+                "player2score": p2_clone.score
             })
 
-    # Calculate average scores per match
-    avg_scores = {
-        player: total_score / match_counts[player] 
-        for player, total_score in scores.items()
-    }
-    
-    # Convert results to DataFrame
+    # Create DataFrames with your original structure
     results_df = pd.DataFrame(results)
+    scores_df = pd.DataFrame(scores.items(), columns=['Player', 'Score']).sort_values('Score', ascending=False)
     
-    return results_df, avg_scores
+    return results_df, scores_df.reset_index(drop=True)
 
 
 
@@ -144,12 +131,11 @@ from files import*
 
 direc = ObjectView(get_direc())
 
-players = [TitForTat(), AlwaysDefect(), AlwaysCooperate(), TitForTat(), AlwaysDefect(), AlwaysCooperate(), TitForTat(), AlwaysDefect(), AlwaysCooperate()]
-results, avg_scores = run_noisy_tournament(players, reward=3, temptation=5, sucker=0, punishment=1, rounds=10, noise=0.0)
+players = [TitForTat(), TitForTat(), TitForTat(), AlwaysDefect(), AlwaysDefect(), AlwaysDefect(), AlwaysCooperate(), AlwaysCooperate(), AlwaysCooperate()]
+results, scores = run_noisy_tournament(players, reward=3, temptation=5, sucker=0, punishment=1, rounds=10, noise=0.0)
 
 print("Match Results:")
-print(results.head())
+print(results)
 
-print("\nAverage Scores:")
-for player, score in avg_scores.items():
-    print(f"{player.name}: {score:.1f}")
+print("Scores:")
+print(scores)
