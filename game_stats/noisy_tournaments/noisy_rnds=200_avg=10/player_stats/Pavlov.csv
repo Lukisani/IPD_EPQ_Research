@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Pavlov,Tit_for_tat,454.7,451.2
+Pavlov,Always_cooperate,783.0,325.5
+Pavlov,Always_defect,101.3,594.8
+Pavlov,Tit_for_two_tats,577.0,408.0
+Pavlov,Random,454.9,445.9
+Pavlov,Alternator,450.1,452.6
+Pavlov,Not_nice_tit_for_tat,455.0,458.0
+Pavlov,Grim_Trigger,135.4,597.9
+Pavlov,Pavlov,562.6,562.6
+Pavlov,Prober,137.0,580.0
+Pavlov,Tester,824.6,260.6
+Pavlov,Joss,405.1,448.6
+Pavlov,Soft_Majority,311.8,518.8
+Pavlov,Adaptive_Tit_For_Tat,610.0,482.5
+Pavlov,Punisher,266.6,523.6
+Pavlov,Extortioner,326.1,516.6
+Pavlov,Retaliator,313.4,507.9
+Pavlov,Spiteful,100.6,597.6

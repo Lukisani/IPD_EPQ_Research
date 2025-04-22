@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Alternator,Tit_for_tat,500.2,491.7
+Alternator,Always_cooperate,800.0,300.0
+Alternator,Always_defect,100.0,600.0
+Alternator,Tit_for_two_tats,771.1,312.6
+Alternator,Random,454.8,447.8
+Alternator,Alternator,400.0,400.0
+Alternator,Not_nice_tit_for_tat,498.3,492.3
+Alternator,Grim_Trigger,107.7,596.7
+Alternator,Pavlov,452.6,450.1
+Alternator,Prober,502.0,492.5
+Alternator,Tester,659.0,361.0
+Alternator,Joss,451.8,505.3
+Alternator,Soft_Majority,592.7,401.2
+Alternator,Adaptive_Tit_For_Tat,651.2,394.7
+Alternator,Punisher,293.7,549.2
+Alternator,Extortioner,334.0,499.0
+Alternator,Retaliator,141.5,582.5
+Alternator,Spiteful,100.0,600.0

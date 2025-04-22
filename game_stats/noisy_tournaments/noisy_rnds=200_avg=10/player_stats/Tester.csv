@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Tester,Tit_for_tat,538.9,574.9
+Tester,Always_cooperate,956.6,65.1
+Tester,Always_defect,40.4,838.4
+Tester,Tit_for_two_tats,313.1,226.1
+Tester,Random,397.4,583.4
+Tester,Alternator,361.0,659.0
+Tester,Not_nice_tit_for_tat,533.5,577.0
+Tester,Grim_Trigger,5.0,995.0
+Tester,Pavlov,260.6,824.6
+Tester,Prober,243.0,195.5
+Tester,Tester,282.8,184.3
+Tester,Joss,486.1,610.1
+Tester,Soft_Majority,517.4,522.4
+Tester,Adaptive_Tit_For_Tat,606.9,303.4
+Tester,Punisher,503.5,661.5
+Tester,Extortioner,229.3,790.8
+Tester,Retaliator,508.5,594.0
+Tester,Spiteful,1.0,996.0

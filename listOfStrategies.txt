@@ -16,7 +16,9 @@ Punisher
 Extortioner
 Retaliator
 Spiteful - stops here
-AdaptiveForgivenessTFT
+WindowedForgivenessTFT
 Generous Tit-for-Tat+
 Predictive Mirror
 Gradual Retaliator
+NicerTester
+AdaptiveTitForTat10

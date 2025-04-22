@@ -245,7 +245,7 @@ class AdaptiveTitForTat(Player):
 
     def __init__(self):
         super().__init__()
-        self.forgiveness_rate = .15 # Start with 15% forgiveness
+        self.forgiveness_rate = .2 # Start with 20% forgiveness
 
     def strategy(self, opponent_history):
         if not opponent_history:
@@ -327,8 +327,8 @@ class Spiteful(Player):
         return 'C'
 
 
-class AdaptiveForgivenessTFT(Player):
-    name = "Adaptive_Forgiveness_TFT"
+class WindowedForgivenessTFT(Player):
+    name = "Windowed_Forgiveness_TFT"
     classifier = {'niceness': 1, 'forgiveness': 0.75, 'memory_depth': 5}
 
     def strategy(self, opponent_history):
@@ -342,16 +342,16 @@ class AdaptiveForgivenessTFT(Player):
         return opponent_history[-1]
 
 
-class GenerousTFTPlus(Player):
-    name = "Generous_TFT_Plus"
+class GenerousTFT(Player):
+    name = "Generous_TFT"
     classifier = {'niceness': 1, 'forgiveness': 1, 'memory_depth': 2}
 
     def strategy(self, opponent_history):
         if not opponent_history:
             return 'C'
-        # Break mutual defection cycles with 30% chance
-        if len(opponent_history) >= 2 and opponent_history[-2:] == ['D', 'D']:
-            return 'C' if random.random() < 0.3 else 'D'
+        # Break mutual defection cycles with 20% chance
+        if len(opponent_history) >= 2 and opponent_history[-1] == 'D':
+            return 'C' if random.random() < 0.20 else 'D'
         return opponent_history[-1]
 
 
@@ -403,3 +403,22 @@ class NicerTester(Player):
             return opponent_history[-1] if opponent_history[2] == 'D' else 'D'
         else:
             return 'C'
+
+class AdaptiveTitForTat10(Player):
+    name = 'Adaptive_Tit_For_Tat_10'
+    '''Starts with cooperation but adjusts its behavior by being more forgiving if the opponent cooperates frequently.'''
+
+    def __init__(self):
+        super().__init__()
+        self.forgiveness_rate = .2 # Start with 20% forgiveness
+
+    def strategy(self, opponent_history):
+        if not opponent_history:
+            return 'C'
+        if opponent_history[-1] == 'C' and self.forgiveness_rate != .4:
+            self.forgiveness_rate += .1
+            return 'C'
+        else:
+            if self.forgiveness_rate != 0:
+                self.forgiveness_rate -= .1
+            return 'C' if random.random() < self.forgiveness_rate else 'D'

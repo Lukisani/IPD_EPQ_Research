@@ -1,6 +1,7 @@
 import pandas as pd
 import os, sys
 import csv
+from pandas import ExcelWriter
 
 PARENT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print(PARENT_DIR)
@@ -73,7 +74,7 @@ def evolution_tournament(initial_players, generations, num_alter=3, rounds=10, n
 # Run evolutionary tournament
 pop_history, score_history = evolution_tournament(
     initial_players=players,
-    generations=100,
+    generations=10,
     num_alter=3,
     rounds=10,
     noise=0.0,
@@ -99,15 +100,15 @@ def plot_evolution(population_history, score_history):
     # Population composition plot
     plt.subplot(1, 3, 1)
     df_pop = pd.DataFrame(population_history).fillna(0)
-    df_pop.plot.area(stacked=True, ax=plt.gca())
+    df_pop.plot.area(stacked=True, ax=plt.gca(), legend=False)  # Removed legend here
     plt.title("Population Composition")
     plt.xlabel("Generation")
     plt.ylabel("Number of Players")
     
-    # Average scores plot
+    # Average scores plot (with legend)
     plt.subplot(1, 3, 2)
     df_scores = pd.DataFrame(score_history)
-    df_scores.plot(ax=plt.gca())
+    df_scores.plot(ax=plt.gca())  # Keeps legend here
     plt.title("Average Scores")
     plt.xlabel("Generation")
     plt.ylabel("Average Score")
@@ -119,7 +120,7 @@ def plot_evolution(population_history, score_history):
     plt.title("Population Trends (Lines)")
     plt.xlabel("Generation")
     plt.ylabel("Number of Players")
-    plt.legend()
+    plt.legend().set_visible(False)  # Removed legend here
     plt.grid(True)
     
     plt.tight_layout()
@@ -127,3 +128,38 @@ def plot_evolution(population_history, score_history):
 
 # Generate visualization
 plot_evolution(pop_history, score_history)
+
+def save_tournament_results(pop_history, score_history, filename="./game_stats/evo_tournaments/tournament_results.csv"):
+    # Convert to DataFrames
+    df_pop = pd.DataFrame(pop_history).fillna(0)
+    df_scores = pd.DataFrame(score_history).fillna(0)
+    
+    # Save to CSV with a multi-index for generations
+    with open(filename, 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(["Generation", "Strategy", "Count", "Average Score"])
+        for gen in df_pop.index:
+            for strat in df_pop.columns:
+                writer.writerow([
+                    gen,
+                    strat,
+                    int(df_pop.loc[gen, strat]),
+                    round(df_scores.loc[gen, strat], 2)
+                ])
+
+# Usage:
+# save_tournament_results(pop_history, score_history)
+
+def save_excel_workbook(pop_history, score_history, filename="tournament_results.xlsx"):
+    with pd.ExcelWriter(filename) as writer:
+        pd.DataFrame(pop_history).fillna(0).to_excel(writer, sheet_name="Population")
+        pd.DataFrame(score_history).fillna(0).to_excel(writer, sheet_name="Scores")
+        
+        # Add summary statistics
+        summary = pd.concat([
+            pd.DataFrame(pop_history[-1], columns=["Final Count"]),
+            pd.DataFrame(score_history[-1], columns=["Final Avg Score"])
+        ], axis=1)
+        summary.to_excel(writer, sheet_name="Summary")
+
+save_excel_workbook(pop_history, score_history)

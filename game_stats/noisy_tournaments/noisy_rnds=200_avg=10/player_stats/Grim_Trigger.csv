@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Grim_Trigger,Tit_for_tat,252.7,206.2
+Grim_Trigger,Always_cooperate,953.0,70.5
+Grim_Trigger,Always_defect,198.9,204.4
+Grim_Trigger,Tit_for_two_tats,334.0,235.0
+Grim_Trigger,Random,589.4,108.9
+Grim_Trigger,Alternator,596.7,107.7
+Grim_Trigger,Not_nice_tit_for_tat,249.2,195.2
+Grim_Trigger,Grim_Trigger,222.7,226.2
+Grim_Trigger,Pavlov,597.9,135.4
+Grim_Trigger,Prober,209.5,202.0
+Grim_Trigger,Tester,995.0,5.0
+Grim_Trigger,Joss,249.9,212.4
+Grim_Trigger,Soft_Majority,318.4,220.9
+Grim_Trigger,Adaptive_Tit_For_Tat,623.7,149.7
+Grim_Trigger,Punisher,223.0,205.0
+Grim_Trigger,Extortioner,465.0,140.0
+Grim_Trigger,Retaliator,226.1,203.1
+Grim_Trigger,Spiteful,199.0,204.0

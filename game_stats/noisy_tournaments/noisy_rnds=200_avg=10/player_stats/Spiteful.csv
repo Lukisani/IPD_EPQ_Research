@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Spiteful,Tit_for_tat,252.0,193.5
+Spiteful,Always_cooperate,1000.0,0.0
+Spiteful,Always_defect,200.0,200.0
+Spiteful,Tit_for_two_tats,280.4,179.9
+Spiteful,Random,604.0,99.0
+Spiteful,Alternator,600.0,100.0
+Spiteful,Not_nice_tit_for_tat,242.0,189.5
+Spiteful,Grim_Trigger,204.0,199.0
+Spiteful,Pavlov,597.6,100.6
+Spiteful,Prober,204.0,199.0
+Spiteful,Tester,996.0,1.0
+Spiteful,Joss,238.0,190.5
+Spiteful,Soft_Majority,204.0,199.0
+Spiteful,Adaptive_Tit_For_Tat,620.0,95.0
+Spiteful,Punisher,216.0,196.0
+Spiteful,Extortioner,468.0,133.0
+Spiteful,Retaliator,224.4,193.9
+Spiteful,Spiteful,279.1,278.6

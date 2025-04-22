@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Adaptive_Tit_For_Tat,Tit_for_tat,554.2,600.2
+Adaptive_Tit_For_Tat,Always_cooperate,611.6,582.6
+Adaptive_Tit_For_Tat,Always_defect,97.1,611.6
+Adaptive_Tit_For_Tat,Tit_for_two_tats,606.5,586.0
+Adaptive_Tit_For_Tat,Random,355.2,620.2
+Adaptive_Tit_For_Tat,Alternator,394.7,651.2
+Adaptive_Tit_For_Tat,Not_nice_tit_for_tat,555.0,600.0
+Adaptive_Tit_For_Tat,Grim_Trigger,149.7,623.7
+Adaptive_Tit_For_Tat,Pavlov,482.5,610.0
+Adaptive_Tit_For_Tat,Prober,551.5,601.5
+Adaptive_Tit_For_Tat,Tester,303.4,606.9
+Adaptive_Tit_For_Tat,Joss,489.5,616.5
+Adaptive_Tit_For_Tat,Soft_Majority,606.5,590.0
+Adaptive_Tit_For_Tat,Adaptive_Tit_For_Tat,586.7,594.7
+Adaptive_Tit_For_Tat,Punisher,420.4,603.9
+Adaptive_Tit_For_Tat,Extortioner,295.9,645.4
+Adaptive_Tit_For_Tat,Retaliator,461.4,611.9
+Adaptive_Tit_For_Tat,Spiteful,95.0,620.0

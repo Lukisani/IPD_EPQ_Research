@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Not_nice_tit_for_tat,Tit_for_tat,450.5,448.5
+Not_nice_tit_for_tat,Always_cooperate,621.2,568.2
+Not_nice_tit_for_tat,Always_defect,188.9,244.4
+Not_nice_tit_for_tat,Tit_for_two_tats,615.7,566.2
+Not_nice_tit_for_tat,Random,442.2,451.7
+Not_nice_tit_for_tat,Alternator,492.3,498.3
+Not_nice_tit_for_tat,Not_nice_tit_for_tat,430.0,429.5
+Not_nice_tit_for_tat,Grim_Trigger,195.2,249.2
+Not_nice_tit_for_tat,Pavlov,458.0,455.0
+Not_nice_tit_for_tat,Prober,469.5,465.0
+Not_nice_tit_for_tat,Tester,577.0,533.5
+Not_nice_tit_for_tat,Joss,360.6,381.1
+Not_nice_tit_for_tat,Soft_Majority,194.9,235.4
+Not_nice_tit_for_tat,Adaptive_Tit_For_Tat,600.0,555.0
+Not_nice_tit_for_tat,Punisher,245.4,284.4
+Not_nice_tit_for_tat,Extortioner,393.9,412.4
+Not_nice_tit_for_tat,Retaliator,247.7,290.7
+Not_nice_tit_for_tat,Spiteful,189.5,242.0

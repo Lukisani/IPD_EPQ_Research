@@ -8,7 +8,7 @@ def noisy_move(move, noise):
         if move == 'C':
             move = 'D'
         else:
-            move = 'C'
+            move = 'D'
     return move
 
 def play_noisy_match(player1, player2, rounds, noise, reward=3, temptation=5, sucker=0, punishment=1): # Procedure
@@ -110,7 +110,7 @@ def duel(player1, player2, rounds, noise, reward=3, temptation=5, sucker=0, puni
             f'{p2_clone.name}(2)' : p2_clone.history}     
     else:
         # Regular play between distinct strategies
-        play_noisy_match(player1, player2, rounds, noise)
+        play_noisy_match(player1, player2, rounds, noise, reward, temptation, sucker, punishment)
         scores = {
             player1.name : player1.score,
             player2.name : player2.score

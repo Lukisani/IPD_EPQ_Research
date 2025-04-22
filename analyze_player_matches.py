@@ -8,6 +8,7 @@ from files import*
 direc = ObjectView(get_direc())
 
 def get_player_stats(folder_directory, filename):
+    # try:
     results = pd.read_csv(f'{folder_directory}/{filename}') # Extracts csv file
     print(results)
     
@@ -49,8 +50,12 @@ def get_player_stats(folder_directory, filename):
         
         # Save the player's results to a CSV file
         save_csv_file(player_results, f'{folder_directory}/{new_folder_name}', f"{player}.csv")
+    # except FileNotFoundError:
+    #     print('Error, file not found')
+    # except:
+    #     print('Error')
 
-folder_directory = './game_stats/custom/axelrod1.1'
-filename = 'basic_results_rnds=200_avg=10'
+folder_directory = './game_stats/noisy_tournaments/noisy_rnds=200_avg=10'
+filename = 'noisy_results_rnds=200_avg=10'
 
 get_player_stats(folder_directory, filename)

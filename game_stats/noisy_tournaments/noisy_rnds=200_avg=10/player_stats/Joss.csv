@@ -1,0 +1,19 @@
+player,opponent,player score,opponent score
+Joss,Tit_for_tat,391.0,372.0
+Joss,Always_cooperate,656.0,516.0
+Joss,Always_defect,189.2,243.2
+Joss,Tit_for_two_tats,627.5,499.0
+Joss,Random,458.4,410.9
+Joss,Alternator,505.3,451.8
+Joss,Not_nice_tit_for_tat,381.1,360.6
+Joss,Grim_Trigger,212.4,249.9
+Joss,Pavlov,448.6,405.1
+Joss,Prober,342.9,333.4
+Joss,Tester,610.1,486.1
+Joss,Joss,337.4,334.9
+Joss,Soft_Majority,472.9,401.4
+Joss,Adaptive_Tit_For_Tat,616.5,489.5
+Joss,Punisher,219.0,258.5
+Joss,Extortioner,397.1,391.1
+Joss,Retaliator,240.9,268.4
+Joss,Spiteful,190.5,238.0
