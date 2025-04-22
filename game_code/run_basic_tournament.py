@@ -20,7 +20,8 @@ direc = ObjectView(get_direc())
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
            Friedman(), Pavlov(), Prober(), Tester(), Joss(), SoftMajority(), AdaptiveTitForTat(), Punisher(),
-           Extortioner(), Retaliator(), Spiteful()]
+           Extortioner(), Retaliator(), Spiteful(), WindowedForgivenessTFT(), GenerousTFT(), PredictiveMirror(),
+           GradualRetaliator(), NicerTester(), AdaptiveTitForTat10()]
 
 # results, scores = run_basic_tournament(players, rounds=100)
 # print(results)
@@ -88,7 +89,7 @@ def average_basic_tournament(rounds=100, average=10, reward=3, temptation=5, suc
 
 
 
-average_basic_tournament()
+average_basic_tournament(rounds=10)
 
 # scores, results = duel(TitForTat(), TitForTat(), rounds=100, reward=3, temptation=5, sucker=0, punishment=1)
 # print(scores)

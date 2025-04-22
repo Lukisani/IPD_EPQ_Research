@@ -16,7 +16,8 @@ direc = ObjectView(get_direc())
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
            Friedman(), Pavlov(), Prober(), Tester(), Joss(), SoftMajority(), AdaptiveTitForTat(), Punisher(),
-           Extortioner(), Retaliator(), Spiteful()]
+           Extortioner(), Retaliator(), Spiteful(), WindowedForgivenessTFT(), GenerousTFT(), PredictiveMirror(),
+           GradualRetaliator(), NicerTester(), AdaptiveTitForTat10()]
 
 def average_noisy_tournament(rounds=100, average=10, noise=0.0, reward=3, temptation=5, sucker=0, punishment=1):
     print()

@@ -18,7 +18,8 @@ direc = ObjectView(get_direc())
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
            Friedman(), Pavlov(), Prober(), Tester(), Joss(), SoftMajority(), AdaptiveTitForTat(), Punisher(),
-           Extortioner(), Retaliator(), Spiteful()]
+           Extortioner(), Retaliator(), Spiteful(), WindowedForgivenessTFT(), GenerousTFT(), PredictiveMirror(),
+           GradualRetaliator(), NicerTester(), AdaptiveTitForTat10()]
 
 
 
@@ -148,18 +149,18 @@ def save_tournament_results(pop_history, score_history, filename="./game_stats/e
                 ])
 
 # Usage:
-# save_tournament_results(pop_history, score_history)
+save_tournament_results(pop_history, score_history)
 
-def save_excel_workbook(pop_history, score_history, filename="tournament_results.xlsx"):
-    with pd.ExcelWriter(filename) as writer:
-        pd.DataFrame(pop_history).fillna(0).to_excel(writer, sheet_name="Population")
-        pd.DataFrame(score_history).fillna(0).to_excel(writer, sheet_name="Scores")
+# def save_excel_workbook(pop_history, score_history, filename="tournament_results.xlsx"):
+#     with pd.ExcelWriter(filename) as writer:
+#         pd.DataFrame(pop_history).fillna(0).to_excel(writer, sheet_name="Population")
+#         pd.DataFrame(score_history).fillna(0).to_excel(writer, sheet_name="Scores")
         
-        # Add summary statistics
-        summary = pd.concat([
-            pd.DataFrame(pop_history[-1], columns=["Final Count"]),
-            pd.DataFrame(score_history[-1], columns=["Final Avg Score"])
-        ], axis=1)
-        summary.to_excel(writer, sheet_name="Summary")
+#         # Add summary statistics
+#         summary = pd.concat([
+#             pd.DataFrame(pop_history[-1], columns=["Final Count"]),
+#             pd.DataFrame(score_history[-1], columns=["Final Avg Score"])
+#         ], axis=1)
+#         summary.to_excel(writer, sheet_name="Summary")
 
-save_excel_workbook(pop_history, score_history)
+# save_excel_workbook(pop_history, score_history)

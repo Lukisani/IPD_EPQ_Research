@@ -264,7 +264,6 @@ class Punisher(Player):
     '''Starts with cooperation but defects for a set number of rounds when the opponent defects.'''
     
 
-
     def __init__(self):
         self.punishment_rounds = 0
 
@@ -313,8 +312,6 @@ class Spiteful(Player):
     name = 'Spiteful'
     '''Starts with cooperation but switches to Always Defect after the opponent defects a certain number of times.'''
     
-
-    
     def __init__(self):
         self.spited = False
 
@@ -331,13 +328,15 @@ class WindowedForgivenessTFT(Player):
     name = "Windowed_Forgiveness_TFT"
     classifier = {'niceness': 1, 'forgiveness': 0.75, 'memory_depth': 5}
 
+    '''Analyses last 5 moves; if 3 or more out of the last 5 opponent moves were cooperations, forgive defections with 50% probability, otherwise play tit for tat'''
+
     def strategy(self, opponent_history):
         if not opponent_history:
             return 'C'
         window = opponent_history[-5:]  # Analyze last 5 moves
         coop_rate = window.count('C') / len(window) if window else 1
         # Forgive defections with 50% probability if opponent usually cooperates
-        if opponent_history[-1] == 'D' and coop_rate > 0.6:
+        if opponent_history[-1] == 'D' and coop_rate > 0.4:
             return 'C' if random.random() < 0.5 else 'D'
         return opponent_history[-1]
 
@@ -345,6 +344,8 @@ class WindowedForgivenessTFT(Player):
 class GenerousTFT(Player):
     name = "Generous_TFT"
     classifier = {'niceness': 1, 'forgiveness': 1, 'memory_depth': 2}
+
+    '''Tit for tat but with a forgiveness rate of 20%'''
 
     def strategy(self, opponent_history):
         if not opponent_history:
@@ -358,6 +359,9 @@ class GenerousTFT(Player):
 class PredictiveMirror(Player):
     name = "Predictive_Mirror"
     classifier = {'niceness': 0.5, 'forgiveness': 0.5, 'memory_depth': 3}
+
+    '''Looks for 2-move patterns (e.g., if D follows C-C), and behaves accordingly based on the key-values pairs stored in its dictionary
+    pattern_responses = {"CC": 'C', "CD": 'D', "DC": 'C', "DD": 'D'}'''
 
     def strategy(self, opponent_history):
         if len(opponent_history) < 3:
@@ -374,6 +378,9 @@ class GradualRetaliator(Player):
     name = "Gradual_Retaliator"
     classifier = {'niceness': 1, 'forgiveness': 0.2, 'memory_depth': 5}
 
+    '''Plays tit for tat, except for each consecutive defection, retaliation length increases by 1 until opponent cooperates
+    After a cooperation, retaliation length decreases by 1 for each cooperation'''
+
     def __init__(self):
         self.retaliation_length = 0
         super().__init__()
@@ -389,7 +396,7 @@ class GradualRetaliator(Player):
 
 class NicerTester(Player):
     name = 'NicerTester'
-    '''Starts with "CDCC", then cooperates if the opponent defects in response to defection; otherwise, defects forever.'''
+    '''Starts with "CDCC", then cooperates if the opponent defects in response to defection; otherwise, defects plasys tit for tat for the remainder of the game.'''
     
     classifier = {
         'niceness': 0,

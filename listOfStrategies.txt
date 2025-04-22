@@ -15,9 +15,9 @@ AdaptiveTitForTat
 Punisher
 Extortioner
 Retaliator
-Spiteful - stops here
+Spiteful
 WindowedForgivenessTFT
-Generous Tit-for-Tat+
+Generous Tit-for-Tat
 Predictive Mirror
 Gradual Retaliator
 NicerTester

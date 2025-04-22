@@ -17,7 +17,8 @@ direc = ObjectView(get_direc())
 
 players = [TitForTat(), AlwaysCooperate(), AlwaysDefect(), TitForTwoTats(), Random(), Alternator(), NotNiceTitForTat(),
            Friedman(), Pavlov(), Prober(), Tester(), Joss(), SoftMajority(), AdaptiveTitForTat(), Punisher(),
-           Extortioner(), Retaliator(), Spiteful()]
+           Extortioner(), Retaliator(), Spiteful(), WindowedForgivenessTFT(), GenerousTFT(), PredictiveMirror(),
+           GradualRetaliator(), NicerTester(), AdaptiveTitForTat10()]
 
 
 
