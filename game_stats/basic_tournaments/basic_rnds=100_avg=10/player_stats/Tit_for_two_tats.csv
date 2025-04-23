@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Tit_for_two_tats,Tit_for_tat,300.0,300.0
+Tit_for_two_tats,Always_cooperate,300.0,300.0
+Tit_for_two_tats,Always_defect,98.0,108.0
+Tit_for_two_tats,Tit_for_two_tats,300.0,300.0
+Tit_for_two_tats,Random,183.4,307.9
+Tit_for_two_tats,Alternator,150.0,400.0
+Tit_for_two_tats,Not_nice_tit_for_tat,297.0,302.0
+Tit_for_two_tats,Grim_Trigger,300.0,300.0
+Tit_for_two_tats,Pavlov,300.0,300.0
+Tit_for_two_tats,Prober,294.0,304.0
+Tit_for_two_tats,Tester,101.0,116.0
+Tit_for_two_tats,Joss,258.6,304.1
+Tit_for_two_tats,Soft_Majority,300.0,300.0
+Tit_for_two_tats,Adaptive_Tit_For_Tat,300.0,300.0
+Tit_for_two_tats,Punisher,300.0,300.0
+Tit_for_two_tats,Extortioner,168.0,333.0
+Tit_for_two_tats,Retaliator,297.0,302.0
+Tit_for_two_tats,Spiteful,98.0,108.0
+Tit_for_two_tats,Windowed_Forgiveness_TFT,300.0,300.0
+Tit_for_two_tats,Generous_TFT,300.0,300.0
+Tit_for_two_tats,Predictive_Mirror,300.0,300.0
+Tit_for_two_tats,Gradual_Retaliator,297.0,302.0
+Tit_for_two_tats,NicerTester,103.0,118.0
+Tit_for_two_tats,Adaptive_Tit_For_Tat_10,300.0,300.0

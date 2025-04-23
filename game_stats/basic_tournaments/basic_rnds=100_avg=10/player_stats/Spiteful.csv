@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Spiteful,Tit_for_tat,123.6,119.1
+Spiteful,Always_cooperate,480.0,30.0
+Spiteful,Always_defect,99.7,101.2
+Spiteful,Tit_for_two_tats,108.0,98.0
+Spiteful,Random,299.6,50.1
+Spiteful,Alternator,300.0,50.0
+Spiteful,Not_nice_tit_for_tat,100.0,100.0
+Spiteful,Grim_Trigger,104.0,99.0
+Spiteful,Pavlov,300.0,50.0
+Spiteful,Prober,104.0,99.0
+Spiteful,Tester,108.0,98.0
+Spiteful,Joss,104.0,99.0
+Spiteful,Soft_Majority,104.0,99.0
+Spiteful,Adaptive_Tit_For_Tat,500.0,0.0
+Spiteful,Punisher,100.0,100.0
+Spiteful,Extortioner,236.0,66.0
+Spiteful,Retaliator,104.0,99.0
+Spiteful,Spiteful,300.0,300.0
+Spiteful,Windowed_Forgiveness_TFT,104.0,99.0
+Spiteful,Generous_TFT,183.2,79.2
+Spiteful,Predictive_Mirror,112.0,97.0
+Spiteful,Gradual_Retaliator,104.0,99.0
+Spiteful,NicerTester,112.0,97.0
+Spiteful,Adaptive_Tit_For_Tat_10,500.0,0.0

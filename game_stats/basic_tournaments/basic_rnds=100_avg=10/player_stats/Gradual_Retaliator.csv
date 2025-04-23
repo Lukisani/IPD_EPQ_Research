@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Gradual_Retaliator,Tit_for_tat,300.0,300.0
+Gradual_Retaliator,Always_cooperate,300.0,300.0
+Gradual_Retaliator,Always_defect,99.0,104.0
+Gradual_Retaliator,Tit_for_two_tats,302.0,297.0
+Gradual_Retaliator,Random,254.7,171.7
+Gradual_Retaliator,Alternator,298.0,55.5
+Gradual_Retaliator,Not_nice_tit_for_tat,103.0,103.0
+Gradual_Retaliator,Grim_Trigger,103.0,103.0
+Gradual_Retaliator,Pavlov,300.0,300.0
+Gradual_Retaliator,Prober,103.0,103.0
+Gradual_Retaliator,Tester,111.0,101.0
+Gradual_Retaliator,Joss,118.0,118.5
+Gradual_Retaliator,Soft_Majority,240.9,240.9
+Gradual_Retaliator,Adaptive_Tit_For_Tat,300.0,300.0
+Gradual_Retaliator,Punisher,300.0,300.0
+Gradual_Retaliator,Extortioner,201.0,201.0
+Gradual_Retaliator,Retaliator,300.0,300.0
+Gradual_Retaliator,Spiteful,99.0,104.0
+Gradual_Retaliator,Windowed_Forgiveness_TFT,107.0,102.0
+Gradual_Retaliator,Generous_TFT,300.0,300.0
+Gradual_Retaliator,Predictive_Mirror,300.0,300.0
+Gradual_Retaliator,Gradual_Retaliator,300.0,300.0
+Gradual_Retaliator,NicerTester,112.0,107.0
+Gradual_Retaliator,Adaptive_Tit_For_Tat_10,302.0,297.0

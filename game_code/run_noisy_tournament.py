@@ -47,12 +47,12 @@ def average_noisy_tournament(rounds=100, average=10, noise=0.0, reward=3, tempta
     # print(average_results)
     # print(average_scores)
 
-    new_folder_name = 'noisy_rnds={}_avg={}'.format(rounds, average)
+    new_folder_name = 'noisy_rnds={}_avg={}_n={}'.format(rounds, average, noise)
     new_folder_path = os.path.join(direc.noisy_tournaments, new_folder_name)
     create_folder(new_folder_path)
 
-    save_csv_file(average_results, new_folder_path, f'noisy_results_rnds={rounds}_avg={average}')
-    save_csv_file(average_scores, new_folder_path, f'noisy_scores_rnds={rounds}_avg={average}')
+    save_csv_file(average_results, new_folder_path, f'noisy_results_rnds={rounds}_avg={average}.csv')
+    save_csv_file(average_scores, new_folder_path, f'noisy_scores_rnds={rounds}_avg={average}.csv')
 
     #kwargs for metadata file
     meta = {
@@ -68,7 +68,7 @@ def average_noisy_tournament(rounds=100, average=10, noise=0.0, reward=3, tempta
 
     create_meta_file(new_folder_path, 'metadata.txt', **meta)
 
-average_noisy_tournament(rounds=200, noise=.05)
+average_noisy_tournament(rounds=100, noise=.20)
 
 # scores, results = duel(TitForTat(),TitForTat(), rounds=20, noise=.1)
 # print(scores)

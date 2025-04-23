@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Predictive_Mirror,Tit_for_tat,300.0,300.0
+Predictive_Mirror,Always_cooperate,300.0,300.0
+Predictive_Mirror,Always_defect,97.0,112.0
+Predictive_Mirror,Tit_for_two_tats,300.0,300.0
+Predictive_Mirror,Random,227.7,234.2
+Predictive_Mirror,Alternator,246.0,256.0
+Predictive_Mirror,Not_nice_tit_for_tat,297.0,302.0
+Predictive_Mirror,Grim_Trigger,300.0,300.0
+Predictive_Mirror,Pavlov,300.0,300.0
+Predictive_Mirror,Prober,248.0,253.0
+Predictive_Mirror,Tester,102.0,112.0
+Predictive_Mirror,Joss,142.7,148.2
+Predictive_Mirror,Soft_Majority,300.0,300.0
+Predictive_Mirror,Adaptive_Tit_For_Tat,300.0,300.0
+Predictive_Mirror,Punisher,300.0,300.0
+Predictive_Mirror,Extortioner,200.0,205.0
+Predictive_Mirror,Retaliator,300.0,300.0
+Predictive_Mirror,Spiteful,97.0,112.0
+Predictive_Mirror,Windowed_Forgiveness_TFT,300.0,300.0
+Predictive_Mirror,Generous_TFT,300.0,300.0
+Predictive_Mirror,Predictive_Mirror,300.0,300.0
+Predictive_Mirror,Gradual_Retaliator,300.0,300.0
+Predictive_Mirror,NicerTester,104.0,114.0
+Predictive_Mirror,Adaptive_Tit_For_Tat_10,300.0,300.0

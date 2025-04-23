@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Joss,Tit_for_tat,147.7,142.7
+Joss,Always_cooperate,320.8,268.8
+Joss,Always_defect,99.0,104.0
+Joss,Tit_for_two_tats,304.1,258.6
+Joss,Random,242.3,216.3
+Joss,Alternator,252.4,235.4
+Joss,Not_nice_tit_for_tat,133.0,133.0
+Joss,Grim_Trigger,124.9,124.4
+Joss,Pavlov,220.1,203.6
+Joss,Prober,130.6,130.6
+Joss,Tester,151.6,146.6
+Joss,Joss,125.8,126.8
+Joss,Soft_Majority,280.9,240.4
+Joss,Adaptive_Tit_For_Tat,318.2,272.7
+Joss,Punisher,118.6,118.6
+Joss,Extortioner,204.5,187.0
+Joss,Retaliator,115.2,115.2
+Joss,Spiteful,99.0,104.0
+Joss,Windowed_Forgiveness_TFT,208.5,185.0
+Joss,Generous_TFT,272.6,237.1
+Joss,Predictive_Mirror,148.2,142.7
+Joss,Gradual_Retaliator,118.5,118.0
+Joss,NicerTester,147.9,142.4
+Joss,Adaptive_Tit_For_Tat_10,315.8,276.3

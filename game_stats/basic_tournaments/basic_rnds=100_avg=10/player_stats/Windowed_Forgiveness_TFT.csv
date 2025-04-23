@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Windowed_Forgiveness_TFT,Tit_for_tat,300.0,300.0
+Windowed_Forgiveness_TFT,Always_cooperate,300.0,300.0
+Windowed_Forgiveness_TFT,Always_defect,99.0,104.0
+Windowed_Forgiveness_TFT,Tit_for_two_tats,300.0,300.0
+Windowed_Forgiveness_TFT,Random,212.7,249.2
+Windowed_Forgiveness_TFT,Alternator,246.8,254.8
+Windowed_Forgiveness_TFT,Not_nice_tit_for_tat,250.0,250.0
+Windowed_Forgiveness_TFT,Grim_Trigger,300.0,300.0
+Windowed_Forgiveness_TFT,Pavlov,300.0,300.0
+Windowed_Forgiveness_TFT,Prober,250.0,250.0
+Windowed_Forgiveness_TFT,Tester,299.0,299.0
+Windowed_Forgiveness_TFT,Joss,185.0,208.5
+Windowed_Forgiveness_TFT,Soft_Majority,300.0,300.0
+Windowed_Forgiveness_TFT,Adaptive_Tit_For_Tat,300.0,300.0
+Windowed_Forgiveness_TFT,Punisher,300.0,300.0
+Windowed_Forgiveness_TFT,Extortioner,200.3,203.8
+Windowed_Forgiveness_TFT,Retaliator,102.0,107.0
+Windowed_Forgiveness_TFT,Spiteful,99.0,104.0
+Windowed_Forgiveness_TFT,Windowed_Forgiveness_TFT,300.0,300.0
+Windowed_Forgiveness_TFT,Generous_TFT,300.0,300.0
+Windowed_Forgiveness_TFT,Predictive_Mirror,300.0,300.0
+Windowed_Forgiveness_TFT,Gradual_Retaliator,102.0,107.0
+Windowed_Forgiveness_TFT,NicerTester,201.4,206.9
+Windowed_Forgiveness_TFT,Adaptive_Tit_For_Tat_10,300.0,300.0

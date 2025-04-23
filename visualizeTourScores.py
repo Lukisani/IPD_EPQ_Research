@@ -40,4 +40,4 @@ def plot_final_scores(folder_path):
     plt.show()
 
 # Example usage:
-plot_final_scores('game_stats/basic_tournaments/basic_rnds=100_avg=10')
+plot_final_scores('game_stats/noisy_tournaments/noisy_rnds=100_avg=10_n=0.2')

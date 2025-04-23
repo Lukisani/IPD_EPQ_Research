@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Extortioner,Tit_for_tat,201.0,201.0
+Extortioner,Always_cooperate,432.0,102.0
+Extortioner,Always_defect,66.0,236.0
+Extortioner,Tit_for_two_tats,333.0,168.0
+Extortioner,Random,249.7,169.7
+Extortioner,Alternator,249.0,169.0
+Extortioner,Not_nice_tit_for_tat,198.0,203.0
+Extortioner,Grim_Trigger,73.0,233.0
+Extortioner,Pavlov,300.0,135.0
+Extortioner,Prober,70.0,235.0
+Extortioner,Tester,202.0,202.0
+Extortioner,Joss,187.0,204.5
+Extortioner,Soft_Majority,73.0,233.0
+Extortioner,Adaptive_Tit_For_Tat,432.0,102.0
+Extortioner,Punisher,73.0,233.0
+Extortioner,Extortioner,168.0,168.0
+Extortioner,Retaliator,198.0,203.0
+Extortioner,Spiteful,66.0,236.0
+Extortioner,Windowed_Forgiveness_TFT,203.8,200.3
+Extortioner,Generous_TFT,242.5,183.0
+Extortioner,Predictive_Mirror,205.0,200.0
+Extortioner,Gradual_Retaliator,201.0,201.0
+Extortioner,NicerTester,204.0,199.0
+Extortioner,Adaptive_Tit_For_Tat_10,432.0,102.0

@@ -55,7 +55,7 @@ def get_player_stats(folder_directory, filename):
     # except:
     #     print('Error')
 
-folder_directory = './game_stats/noisy_tournaments/noisy_rnds=200_avg=10'
-filename = 'noisy_results_rnds=200_avg=10'
+folder_directory = './game_stats/basic_tournaments/basic_rnds=100_avg=10'
+filename = 'basic_results_rnds=100_avg=10.csv'
 
 get_player_stats(folder_directory, filename)

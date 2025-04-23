@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Soft_Majority,Tit_for_tat,300.0,300.0
+Soft_Majority,Always_cooperate,300.0,300.0
+Soft_Majority,Always_defect,99.0,104.0
+Soft_Majority,Tit_for_two_tats,300.0,300.0
+Soft_Majority,Random,254.6,145.6
+Soft_Majority,Alternator,248.0,253.0
+Soft_Majority,Not_nice_tit_for_tat,103.0,103.0
+Soft_Majority,Grim_Trigger,300.0,300.0
+Soft_Majority,Pavlov,300.0,300.0
+Soft_Majority,Prober,103.0,103.0
+Soft_Majority,Tester,250.0,250.0
+Soft_Majority,Joss,240.4,280.9
+Soft_Majority,Soft_Majority,300.0,300.0
+Soft_Majority,Adaptive_Tit_For_Tat,300.0,300.0
+Soft_Majority,Punisher,101.0,103.5
+Soft_Majority,Extortioner,233.0,73.0
+Soft_Majority,Retaliator,201.5,201.5
+Soft_Majority,Spiteful,99.0,104.0
+Soft_Majority,Windowed_Forgiveness_TFT,300.0,300.0
+Soft_Majority,Generous_TFT,300.0,300.0
+Soft_Majority,Predictive_Mirror,300.0,300.0
+Soft_Majority,Gradual_Retaliator,240.9,240.9
+Soft_Majority,NicerTester,299.0,299.0
+Soft_Majority,Adaptive_Tit_For_Tat_10,300.0,300.0

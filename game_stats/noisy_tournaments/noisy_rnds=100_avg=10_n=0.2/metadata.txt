@@ -1,0 +1,8 @@
+Type: noisy_tournament
+Rounds: 100
+Average: 10
+Noise: 0.2
+Reward: 3
+Temptation: 5
+Sucker: 0
+Punishment: 1

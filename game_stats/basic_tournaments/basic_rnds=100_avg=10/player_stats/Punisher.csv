@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Punisher,Tit_for_tat,300.0,300.0
+Punisher,Always_cooperate,300.0,300.0
+Punisher,Always_defect,99.0,104.0
+Punisher,Tit_for_two_tats,300.0,300.0
+Punisher,Random,256.2,143.7
+Punisher,Alternator,274.4,150.4
+Punisher,Not_nice_tit_for_tat,100.0,100.0
+Punisher,Grim_Trigger,300.0,300.0
+Punisher,Pavlov,300.0,300.0
+Punisher,Prober,103.0,103.0
+Punisher,Tester,107.0,102.0
+Punisher,Joss,118.6,118.6
+Punisher,Soft_Majority,103.5,101.0
+Punisher,Adaptive_Tit_For_Tat,302.0,297.0
+Punisher,Punisher,300.0,300.0
+Punisher,Extortioner,233.0,73.0
+Punisher,Retaliator,103.0,103.0
+Punisher,Spiteful,100.0,100.0
+Punisher,Windowed_Forgiveness_TFT,300.0,300.0
+Punisher,Generous_TFT,300.0,300.0
+Punisher,Predictive_Mirror,300.0,300.0
+Punisher,Gradual_Retaliator,300.0,300.0
+Punisher,NicerTester,109.0,104.0
+Punisher,Adaptive_Tit_For_Tat_10,302.0,297.0

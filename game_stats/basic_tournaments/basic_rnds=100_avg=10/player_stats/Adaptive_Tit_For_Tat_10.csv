@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Adaptive_Tit_For_Tat_10,Tit_for_tat,296.6,296.1
+Adaptive_Tit_For_Tat_10,Always_cooperate,307.2,289.2
+Adaptive_Tit_For_Tat_10,Always_defect,9.8,460.8
+Adaptive_Tit_For_Tat_10,Tit_for_two_tats,300.0,300.0
+Adaptive_Tit_For_Tat_10,Random,151.4,384.9
+Adaptive_Tit_For_Tat_10,Alternator,159.8,385.3
+Adaptive_Tit_For_Tat_10,Not_nice_tit_for_tat,292.3,296.8
+Adaptive_Tit_For_Tat_10,Grim_Trigger,300.0,300.0
+Adaptive_Tit_For_Tat_10,Pavlov,300.0,300.0
+Adaptive_Tit_For_Tat_10,Prober,294.0,304.0
+Adaptive_Tit_For_Tat_10,Tester,6.0,496.0
+Adaptive_Tit_For_Tat_10,Joss,276.3,315.8
+Adaptive_Tit_For_Tat_10,Soft_Majority,300.0,300.0
+Adaptive_Tit_For_Tat_10,Adaptive_Tit_For_Tat,300.0,300.0
+Adaptive_Tit_For_Tat_10,Punisher,297.0,302.0
+Adaptive_Tit_For_Tat_10,Extortioner,102.0,432.0
+Adaptive_Tit_For_Tat_10,Retaliator,297.0,302.0
+Adaptive_Tit_For_Tat_10,Spiteful,0.0,500.0
+Adaptive_Tit_For_Tat_10,Windowed_Forgiveness_TFT,300.0,300.0
+Adaptive_Tit_For_Tat_10,Generous_TFT,300.0,300.0
+Adaptive_Tit_For_Tat_10,Predictive_Mirror,300.0,300.0
+Adaptive_Tit_For_Tat_10,Gradual_Retaliator,297.0,302.0
+Adaptive_Tit_For_Tat_10,NicerTester,9.0,494.0
+Adaptive_Tit_For_Tat_10,Adaptive_Tit_For_Tat_10,137.1,137.6

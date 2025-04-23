@@ -62,8 +62,8 @@ def average_basic_tournament(rounds=100, average=10, reward=3, temptation=5, suc
         new_folder_path = os.path.join(direc.custom, new_folder_name)
         create_folder(new_folder_path)
 
-        save_csv_file(average_results, new_folder_path, f'basic_results_rnds={rounds}_avg={average}')
-        save_csv_file(average_scores, new_folder_path, f'basic_scores_rnds={rounds}_avg={average}')
+        save_csv_file(average_results, new_folder_path, f'basic_results_rnds={rounds}_avg={average}.csv')
+        save_csv_file(average_scores, new_folder_path, f'basic_scores_rnds={rounds}_avg={average}.csv')
 
     else:
         # Saves results all under one folder
@@ -71,8 +71,8 @@ def average_basic_tournament(rounds=100, average=10, reward=3, temptation=5, suc
         new_folder_path = os.path.join(direc.basic_tournaments, new_folder_name)
         create_folder(new_folder_path)
 
-        save_csv_file(average_results, new_folder_path, f'basic_results_rnds={rounds}_avg={average}')
-        save_csv_file(average_scores, new_folder_path, f'basic_scores_rnds={rounds}_avg={average}')
+        save_csv_file(average_results, new_folder_path, f'basic_results_rnds={rounds}_avg={average}.csv')
+        save_csv_file(average_scores, new_folder_path, f'basic_scores_rnds={rounds}_avg={average}.csv')
 
     #kwargs for metadata file
     meta = {
@@ -89,7 +89,7 @@ def average_basic_tournament(rounds=100, average=10, reward=3, temptation=5, suc
 
 
 
-average_basic_tournament(rounds=10)
+average_basic_tournament()
 
 # scores, results = duel(TitForTat(), TitForTat(), rounds=100, reward=3, temptation=5, sucker=0, punishment=1)
 # print(scores)

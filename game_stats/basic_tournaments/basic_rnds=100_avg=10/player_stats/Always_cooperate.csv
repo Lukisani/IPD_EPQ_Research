@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Always_cooperate,Tit_for_tat,300.0,300.0
+Always_cooperate,Always_cooperate,300.0,300.0
+Always_cooperate,Always_defect,0.0,500.0
+Always_cooperate,Tit_for_two_tats,300.0,300.0
+Always_cooperate,Random,144.6,403.6
+Always_cooperate,Alternator,150.0,400.0
+Always_cooperate,Not_nice_tit_for_tat,297.0,302.0
+Always_cooperate,Grim_Trigger,300.0,300.0
+Always_cooperate,Pavlov,300.0,300.0
+Always_cooperate,Prober,294.0,304.0
+Always_cooperate,Tester,6.0,496.0
+Always_cooperate,Joss,268.8,320.8
+Always_cooperate,Soft_Majority,300.0,300.0
+Always_cooperate,Adaptive_Tit_For_Tat,300.0,300.0
+Always_cooperate,Punisher,300.0,300.0
+Always_cooperate,Extortioner,102.0,432.0
+Always_cooperate,Retaliator,300.0,300.0
+Always_cooperate,Spiteful,30.0,480.0
+Always_cooperate,Windowed_Forgiveness_TFT,300.0,300.0
+Always_cooperate,Generous_TFT,300.0,300.0
+Always_cooperate,Predictive_Mirror,300.0,300.0
+Always_cooperate,Gradual_Retaliator,300.0,300.0
+Always_cooperate,NicerTester,9.0,494.0
+Always_cooperate,Adaptive_Tit_For_Tat_10,289.2,307.2

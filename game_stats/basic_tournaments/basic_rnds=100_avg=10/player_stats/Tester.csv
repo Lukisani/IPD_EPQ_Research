@@ -1,0 +1,25 @@
+player,opponent,player score,opponent score
+Tester,Tit_for_tat,299.0,299.0
+Tester,Always_cooperate,496.0,6.0
+Tester,Always_defect,98.0,108.0
+Tester,Tit_for_two_tats,116.0,101.0
+Tester,Random,246.6,201.1
+Tester,Alternator,248.0,253.0
+Tester,Not_nice_tit_for_tat,295.0,300.0
+Tester,Grim_Trigger,102.0,107.0
+Tester,Pavlov,198.0,203.0
+Tester,Prober,105.0,105.0
+Tester,Tester,104.0,104.0
+Tester,Joss,146.6,151.6
+Tester,Soft_Majority,250.0,250.0
+Tester,Adaptive_Tit_For_Tat,496.0,6.0
+Tester,Punisher,102.0,107.0
+Tester,Extortioner,202.0,202.0
+Tester,Retaliator,101.0,111.0
+Tester,Spiteful,98.0,108.0
+Tester,Windowed_Forgiveness_TFT,299.0,299.0
+Tester,Generous_TFT,299.0,299.0
+Tester,Predictive_Mirror,112.0,102.0
+Tester,Gradual_Retaliator,101.0,111.0
+Tester,NicerTester,106.0,111.0
+Tester,Adaptive_Tit_For_Tat_10,496.0,6.0
